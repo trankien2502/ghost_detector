@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Ghost Detector</string>
+
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">French</string>
+    <string name="portuguese" translatable="false">Portuguese</string>
+    <string name="spanish" translatable="false">Spanish</string>
+    <string name="german" translatable="false">German</string>
+    <string name="hindi" translatable="false">Hindi</string>
+    <string name="indonesia" translatable="false">Indonesia</string>
+    <string name="china" translatable="false">China</string>
+
+    <string name="Send_Email">Send Email</string>
+    <string name="There_is_no">There is no</string>
+    <string name="thank_you">Thank you</string>
+    <string name="rate_us">Rate us</string>
+    <string name="not_now">Not now</string>
+    <string name="this_action_may_contain_advertising">This action may contain advertising</string>
+    <string name="your_opinion_matter_to_us">Your opinion matter to us</string>
+    <string name="if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then">If you enjoy this BaseProduct, would \nyou mind rating us on the Google Play, then?</string>
+
+    <string name="language">Language</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
+    <string name="feedback">Feedback</string>
+    <string name="report_bugs_and_tell_us_what_to_improve">Report bugs and tell us what to improve</string>
+    <string name="share_with_friends">Share with friends</string>
+    <string name="privacy_policy">Privacy Policy.</string>
+    <string name="request">Request or feedback</string>
+    <string name="send_email">Send by email&#8230;</string>
+    <string name="email_clients_not_found">Not found any Email client</string>
+    <string name="version">Version</string>
+    <string name="next">Next</string>
+    <string name="quit">Quit</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_intro_01">Title 01</string>
+    <string name="title_intro_02">Title 02</string>
+    <string name="title_intro_03">Title 03</string>
+    <string name="content_intro_01">Content 01</string>
+    <string name="content_intro_02">Content 02</string>
+    <string name="content_intro_03">Content 03</string>
+    <string name="continue_">Continue</string>
+    <string name="are_you_sure_want_to_quit_app">Are you sure want to quit app?</string>
+    <string name="no_internet_connection">No Internet Connection!</string>
+    <string name="loading">Loading…</string>
+
+</resources>

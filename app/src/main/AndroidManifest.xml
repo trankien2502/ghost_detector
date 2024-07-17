@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ghost_detector"
+        tools:targetApi="n">
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.language.LanguageStartActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.language.LanguageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.intro.IntroActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.permission.PermissionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.home.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.policy.PolicyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name="com.ghostdetctor.ghost_detector.service.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id" />
+
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.version"-->
+<!--            android:value="@integer/google_play_services_version" />-->
+        <!--fb-->
+        <!--<meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/fb_app_id" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
+        <meta-data
+            android:name="com.facebook.sdk.AutoInitEnabled"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
+            android:value="true" />-->
+
+    </application>
+
+</manifest>

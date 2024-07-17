@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rating_0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/your_opinion_matter_to_us"
+                android:textColor="#0066FF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then"
+                android:textColor="#939191"
+                android:textSize="14sp" />
+
+            <RatingBar
+                android:id="@+id/rtb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:numStars="5"
+                android:progressTint="#FFF732"
+                android:secondaryProgressTint="#FFF732"
+                android:stepSize="1"
+                tools:ignore="UnusedAttribute" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="136dp"
+                    android:layout_height="36dp"
+                    app:cardBackgroundColor="#D82D25"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/btnRateUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/rate_us"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="15sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="136dp"
+                    android:layout_height="36dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardBackgroundColor="#FFFFFFFF"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/btnNotNow"
+                        android:layout_width="136dp"
+                        android:layout_height="36dp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/not_now"
+                        android:textAllCaps="false"
+                        android:textColor="#AFAFAF"
+                        android:textSize="15sp" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

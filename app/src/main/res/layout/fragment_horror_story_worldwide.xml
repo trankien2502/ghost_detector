@@ -1,0 +1,436 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ghostdetctor.ghost_detector.ui.ghost.story.HorrorStoryWorldwideFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStory1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivStory1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_border_story"
+            app:layout_constraintBottom_toBottomOf="@id/llStory1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llStory1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ivStory1"
+            app:layout_constraintStart_toStartOf="@id/ivStory1"
+            app:layout_constraintTop_toTopOf="@id/ivStory1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center"
+                android:text="@string/horror_title_1"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="3"
+                android:text="@string/horror_content_1"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:id="@+id/tvSeeMore1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/see_more"
+                    android:textColor="#0dd700"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_underline"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSeeMore1"
+                    app:layout_constraintEnd_toEndOf="@id/tvSeeMore1"
+                    app:layout_constraintStart_toStartOf="@id/tvSeeMore1"
+                    app:layout_constraintTop_toTopOf="@id/tvSeeMore1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStory2"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clStory1">
+
+        <ImageView
+            android:id="@+id/ivStory2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_border_story"
+            app:layout_constraintBottom_toBottomOf="@id/llStory2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llStory2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ivStory2"
+            app:layout_constraintStart_toStartOf="@id/ivStory2"
+            app:layout_constraintTop_toTopOf="@id/ivStory2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center"
+                android:text="@string/horror_title_2"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="3"
+                android:text="@string/horror_content_2"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:id="@+id/tvSeeMore2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/see_more"
+                    android:textColor="#0dd700"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_underline"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSeeMore2"
+                    app:layout_constraintEnd_toEndOf="@id/tvSeeMore2"
+                    app:layout_constraintStart_toStartOf="@id/tvSeeMore2"
+                    app:layout_constraintTop_toTopOf="@id/tvSeeMore2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStory3"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clStory2">
+
+        <ImageView
+            android:id="@+id/ivStory3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_border_story"
+            app:layout_constraintBottom_toBottomOf="@id/llStory3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llStory3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ivStory3"
+            app:layout_constraintStart_toStartOf="@id/ivStory3"
+            app:layout_constraintTop_toTopOf="@id/ivStory3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center"
+                android:text="@string/horror_title_3"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="3"
+                android:text="@string/horror_content_3"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:id="@+id/tvSeeMore3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/see_more"
+                    android:textColor="#0dd700"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_underline"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSeeMore3"
+                    app:layout_constraintEnd_toEndOf="@id/tvSeeMore3"
+                    app:layout_constraintStart_toStartOf="@id/tvSeeMore3"
+                    app:layout_constraintTop_toTopOf="@id/tvSeeMore3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStory4"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clStory3">
+
+        <ImageView
+            android:id="@+id/ivStory4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_border_story"
+            app:layout_constraintBottom_toBottomOf="@id/llStory4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llStory4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ivStory4"
+            app:layout_constraintStart_toStartOf="@id/ivStory4"
+            app:layout_constraintTop_toTopOf="@id/ivStory4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center"
+                android:text="@string/horror_title_4"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="3"
+                android:text="@string/horror_content_4"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:id="@+id/tvSeeMore4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/see_more"
+                    android:textColor="#0dd700"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_underline"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSeeMore4"
+                    app:layout_constraintEnd_toEndOf="@id/tvSeeMore4"
+                    app:layout_constraintStart_toStartOf="@id/tvSeeMore4"
+                    app:layout_constraintTop_toTopOf="@id/tvSeeMore4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clStory5"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clStory4">
+
+        <ImageView
+            android:id="@+id/ivStory5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_border_story"
+            app:layout_constraintBottom_toBottomOf="@id/llStory5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llStory5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ivStory5"
+            app:layout_constraintStart_toStartOf="@id/ivStory5"
+            app:layout_constraintTop_toTopOf="@id/ivStory5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center"
+                android:text="@string/horror_title_5"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_gilroy"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="3"
+                android:text="@string/horror_content_5"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:id="@+id/tvSeeMore5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/see_more"
+                    android:textColor="#0dd700"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_underline"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSeeMore5"
+                    app:layout_constraintEnd_toEndOf="@id/tvSeeMore5"
+                    app:layout_constraintStart_toStartOf="@id/tvSeeMore5"
+                    app:layout_constraintTop_toTopOf="@id/tvSeeMore5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

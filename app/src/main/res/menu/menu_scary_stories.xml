@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/haunted_storyteller"
+        android:title="@string/haunted_storytellers"/>
+    <item android:id="@+id/horror_stories_worldwide"
+        android:title="@string/horror_story_worldwide"/>
+</menu>

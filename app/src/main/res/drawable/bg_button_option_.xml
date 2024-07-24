@@ -1,0 +1,23 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Hình chữ nhật không màu bên trên -->
+    <item>
+        <shape>
+            <size
+                android:width="90dp"
+                android:height="46dp" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- Hình chữ nhật màu đỏ bên dưới -->
+    <item>
+        <shape>
+            <size
+                android:width="90dp"
+                android:height="2dp" />
+            <solid android:color="#FF0000" />
+        </shape>
+    </item>
+
+</layer-list>

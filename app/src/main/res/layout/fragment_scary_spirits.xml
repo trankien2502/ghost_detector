@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.ghostdetctor.ghost_detector.ui.ghost.collection.ScarySpiritsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvScarySpirits"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="4dp"/>
+
+</FrameLayout>

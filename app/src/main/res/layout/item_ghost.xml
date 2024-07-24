@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="12dp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clGhost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="154:122"
+            android:src="@drawable/img_border_ghost_item" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTest"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="152:8">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTest"
+            app:layout_constraintBottom_toTopOf="@id/clTv"
+            app:layout_constraintDimensionRatio="152:88">
+            <ImageView
+                android:id="@+id/ivGhost"
+                android:layout_width="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:layout_height="85dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:adjustViewBounds="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/img_ghost_11"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/clTv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:weightSum="16"
+            android:orientation="horizontal"
+            app:layout_constraintDimensionRatio="152:24">
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/tvGhostName"
+                android:layout_weight="10"
+                android:layout_width="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/bowlby_one_sc"
+                android:textColor="#00441e"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="The woman in black"
+                android:gravity="center"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

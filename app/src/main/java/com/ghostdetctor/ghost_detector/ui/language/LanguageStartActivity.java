@@ -1,6 +1,7 @@
 package com.ghostdetctor.ghost_detector.ui.language;
 
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -9,6 +10,7 @@ import com.ghostdetctor.ghost_detector.base.BaseActivity;
 import com.ghostdetctor.ghost_detector.ui.intro.IntroActivity;
 import com.ghostdetctor.ghost_detector.ui.language.adapter.LanguageStartAdapter;
 import com.ghostdetctor.ghost_detector.ui.language.model.LanguageModel;
+import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetctor.ghost_detector.util.SystemUtil;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityLanguageStartBinding;
@@ -21,6 +23,7 @@ public class LanguageStartActivity extends BaseActivity<ActivityLanguageStartBin
 
     List<LanguageModel> listLanguage;
     String codeLang;
+    String nameLang;
 
     @Override
     public ActivityLanguageStartBinding getBinding() {
@@ -30,25 +33,28 @@ public class LanguageStartActivity extends BaseActivity<ActivityLanguageStartBin
     @Override
     public void initView() {
         initData();
-        codeLang = Locale.getDefault().getLanguage();
-
-        binding.viewTop.ivBack.setVisibility(View.INVISIBLE);
-        binding.viewTop.tvToolBar.setText(getString(R.string.language));
+        //codeLang = Locale.getDefault().getLanguage();
+        binding.tvTitle.setText(getString(R.string.language));
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        LanguageStartAdapter languageStartAdapter = new LanguageStartAdapter(listLanguage, code -> codeLang = code, this);
-
-
-        languageStartAdapter.setCheck(SystemUtil.getPreLanguage(getBaseContext()));
-
+        LanguageStartAdapter languageStartAdapter = new LanguageStartAdapter(listLanguage, languageModel -> {
+            codeLang = languageModel.getCode();
+            nameLang = languageModel.getName();
+            }, this);
+        //languageStartAdapter.setCheck(SystemUtil.getPreLanguage(getBaseContext()));
         binding.rcvLangStart.setLayoutManager(linearLayoutManager);
         binding.rcvLangStart.setAdapter(languageStartAdapter);
     }
 
     @Override
     public void bindView() {
-        binding.viewTop.ivCheck.setOnClickListener(view -> {
+        binding.ivGone.setOnClickListener(view -> {
+            if (codeLang==null || codeLang.isEmpty()){
+                Toast.makeText(this, R.string.please_select_a_language, Toast.LENGTH_SHORT).show();
+                return;
+            }
             SystemUtil.saveLocale(getBaseContext(), codeLang);
+            SPUtils.setString(this,SPUtils.LANGUAGE,nameLang);
             startNextActivity(IntroActivity.class, null);
             finishAffinity();
         });

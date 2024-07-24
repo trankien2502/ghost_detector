@@ -46,8 +46,6 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langug
             return;
         }
         holder.tvLang.setText(languageModel.getName());
-        holder.rdbCheck.setChecked(languageModel.getActive());
-        holder.rdbCheck.setClickable(false);
 
         switch (languageModel.getCode()) {
             case "fr":
@@ -94,14 +92,12 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langug
     }
 
     public static class LangugeViewHolder extends RecyclerView.ViewHolder {
-        private final RadioButton rdbCheck;
         private final TextView tvLang;
         private final LinearLayout layoutItem;
         private final ImageView icLang;
 
         public LangugeViewHolder(@NonNull View itemView) {
             super(itemView);
-            rdbCheck = itemView.findViewById(R.id.rdbCheck);
             icLang = itemView.findViewById(R.id.icLang);
             tvLang = itemView.findViewById(R.id.tvLang);
             layoutItem = itemView.findViewById(R.id.layoutItem);

@@ -44,5 +44,164 @@
     <string name="are_you_sure_want_to_quit_app">Are you sure want to quit app?</string>
     <string name="no_internet_connection">No Internet Connection!</string>
     <string name="loading">Loading…</string>
+    <string name="option">Option</string>
+    <string name="start">Start</string>
+    <string name="challenge">Challenge</string>
+    <string name="horror_ghost">Horror Ghosts</string>
+    <string name="scary_spirits">Scary Spirits</string>
+    <string name="start_scanning">Start Scanning</string>
+    <string name="please_select_ghost_type">Please select ghost type!</string>
+    <string name="camera_access">Camera Access</string>
+    <string name="this_app_needs_access_to_the_camera_to_take_a_photo_now">The app needs access to the Camera to take a photo now.</string>
+    <string name="deny">Deny</string>
+    <string name="allow">Allow</string>
+    <string name="walk_around_slowly_to_detect_supernatural_entities">WALK AROUND SLOWLY TO DETECT SUPERNATURAL ENTITIES.....</string>
+    <string name="ghost_scanning">Ghost Scanning</string>
+    <string name="evp_levels">EVP LEVELS</string>
+    <string name="tap_to_scan">Tap to scan</string>
+    <string name="ghost_type">Ghost Type</string>
+    <string name="collection">Collection</string>
+    <string name="scary_stories">Scary Stories</string>
+    <string name="description">Description</string>
+    <string name="_test">Fisherman Finn is a kind-hearted ghost who haunts coastal areas and fishing villages. He often helps fishermen find the best catches and warns them of impending storms, ensuring their safety on the water.</string>
+    <string name="ghost_detail">Ghost Detail</string>
+    <string name="haunted_title_1">The Whispering Librarian</string>
+    <string name="haunted_content_1">I was browsing old books in the dusty library when I heard a soft whisper. I turned to see a spectral figure of a librarian, her finger raised to her lips. She gestured toward a forgotten book on a high shelf. When I retrieved it, I felt a chill and heard her voice tell me the tragic tale of a love lost long ago.</string>
+    <string name="haunted_teller_1" translatable="false">Sarah Mitchell,</string>
+    <string name="haunted_teller_2" translatable="false">Jake Thompson,</string>
+    <string name="haunted_teller_3" translatable="false">Emily Chen,</string>
+    <string name="haunted_teller_4" translatable="false">David Reynolds,</string>
+    <string name="haunted_teller_5" translatable="false">Lisa Carter,</string>
+    <string name="haunted_footer_1">Interviewed at the Old Town Library Podcast.</string>
+    <string name="haunted_title_2">The Ghostly Poet</string>
+    <string name="haunted_content_2">During an open mic night, I noticed a man in old-fashioned clothing reciting poems. His words were haunting, and the audience was entranced. When he finished, he vanished into thin air. Later, I learned he was a local poet who died a century ago.</string>
+    <string name="haunted_footer_2">Shared on "Tales from the Shadows" podcast.</string>
+    <string name="haunted_title_3">The Haunted Campfire</string>
+    <string name="haunted_content_3">While camping with friends, we gathered around a fire, and an elderly woman joined us. She began telling eerie stories of the forest and its spirits. When dawn broke, she was gone, leaving behind only the smell of smoke.</string>
+    <string name="haunted_footer_3">Recounted in a camping group interview.</string>
+    <string name="haunted_title_4">The Cursed Storyteller</string>
+    <string name="haunted_content_4">At a local fair, I stumbled upon a storyteller in a tattered cloak. His tales of curses and hauntings were mesmerizing. After his performance, he vanished into the crowd, and I learned later he had disappeared decades ago.</string>
+    <string name="haunted_footer_4">Featured in "Local Legends" blog post.</string>
+    <string name="haunted_title_5">The Spectral Child</string>
+    <string name="haunted_content_5">One evening, while visiting an old inn, I overheard a child’s laughter. I followed the sound and found a young girl telling stories to an empty room. When I approached, she smiled but then faded away.</string>
+    <string name="haunted_footer_5">Discussed during a ghost hunting webinar.</string>
+
+    <string name="horror_title_1">The White Lady (Europe)</string>
+    <string name="horror_content_1">The White Lady is a ghostly apparition seen in many European countries, including Germany and the Czech Republic. She is often believed to be the spirit of a woman who died tragically or was betrayed by her lover. In Houska Castle in the Czech Republic, witnesses have reported seeing her wandering the halls in a flowing white gown. She is said to be a warning of impending danger or death.</string>
+    <string name="horror_footer_1">Source: Common folklore across various European countries.</string>
+    <string name="horror_title_2">The Yurei (Japan)</string>
+    <string name="horror_content_2">Yurei are traditional Japanese ghosts, often depicted as spirits of individuals who died violently or with unresolved issues. They are typically portrayed wearing white burial kimonos with long, unkempt hair. One famous story is the Yurei of Okiku, a servant girl who was falsely accused of losing a valuable plate. After her death, she returned as a vengeful spirit, counting to nine and screaming when she couldn\'t find the tenth plate.</string>
+    <string name="horror_footer_2">Source: Japanese folklore and the story of Okiku.</string>
+    <string name="horror_title_3">The Haunted Journal</string>
+    <string name="horror_content_3">La Llorona, or "The Weeping Woman," is a Mexican legend about a woman named Maria who drowned her children in a fit of rage and later drowned herself in despair. Her spirit is said to wander near rivers and lakes, weeping and searching for her lost children. Hearing her cries is considered an omen of death.</string>
+    <string name="horror_footer_3">Source: Mexican folklore.</string>
+    <string name="horror_title_4">The Bell Witch (USA)</string>
+    <string name="horror_content_4">The Bell Witch is a famous American haunting from the early 19th century in Tennessee. The Bell family was tormented by an invisible entity that spoke, moved objects, and physically attacked them. The spirit identified itself as Kate Batts, a neighbor who had cursed the family. The haunting culminated in the mysterious death of the family patriarch, John Bell.</string>
+    <string name="horror_footer_4">Source: American folklore and historical accounts from Tennessee.</string>
+    <string name="horror_title_5">The Crying Boy Painting (UK)</string>
+    <string name="horror_content_5">The Crying Boy is a series of paintings by Italian painter Giovanni Bragolin, which became infamous in the UK during the 1980s. Many houses that displayed the painting experienced unexplained fires, and the painting often remained unscathed. Theories about a curse surrounding the painting spread, leading to widespread fear and the destruction of many copies.</string>
+    <string name="horror_footer_5">Source: British urban legend and media reports from the 1980s.</string>
+
+    <string name="haunted_storytellers">Haunted Storytellers</string>
+    <string name="horror_story_worldwide">Horror Story Worldwide</string>
+
+    <string name="see_more">See more</string>
+    <string name="stories">Stories</string>
+
+    <string name="danger_0" translatable="false">0/10</string>
+    <string name="danger_1" translatable="false">1/10</string>
+    <string name="danger_2" translatable="false">2/10</string>
+    <string name="danger_3" translatable="false">3/10</string>
+    <string name="danger_4" translatable="false">4/10</string>
+    <string name="danger_5" translatable="false">5/10</string>
+    <string name="danger_6" translatable="false">6/10</string>
+    <string name="danger_7" translatable="false">7/10</string>
+    <string name="danger_8" translatable="false">8/10</string>
+    <string name="danger_9" translatable="false">9/10</string>
+    <string name="danger_10" translatable="false">10/10</string>
+
+    <string name="scary_name_1">The Ghost Tree</string>
+    <string name="scary_name_2">Lily the Garden Spirit</string>
+    <string name="scary_name_3">Doll Haunt</string>
+    <string name="scary_name_4">Lantern Jack</string>
+    <string name="scary_name_5">Fisherman Finn</string>
+    <string name="scary_name_6">Poisoned Soul</string>
+    <string name="scary_name_7">Cat Ghost</string>
+    <string name="scary_name_8">Tom</string>
+    <string name="scary_name_9">Bookworm Bella</string>
+    <string name="scary_name_10">Harmony the Harpist</string>
+
+    <string name="scary_die_1"></string>
+    <string name="scary_die_2"></string>
+    <string name="scary_die_3"></string>
+    <string name="scary_die_4"></string>
+    <string name="scary_die_5"></string>
+    <string name="scary_die_6"></string>
+    <string name="scary_die_7"></string>
+    <string name="scary_die_8"></string>
+    <string name="scary_die_9"></string>
+    <string name="scary_die_10"></string>
+
+    <string name="scary_description_2">Lily is a gentle spirit who tends to gardens and flowers. She is often seen watering plants and nurturing gardens, bringing a sense of tranquility and natural beauty to those who encounter her</string>
+    <string name="scary_description_1">The Ghost Tree is a spectral tree that appears in haunted forests. It is said to be inhabited by the spirits of those who died nearby. The tree itself does no harm, but it serves as a beacon for lost souls, guiding them to the afterlife.</string>
+    <string name="scary_description_3">The Doll Haunt is a ghostly presence attached to a doll. This spirit often brings a sense of nostalgia and comfort to those who find the doll. It enjoys being part of a family and watching over children.</string>
+    <string name="scary_description_4">Lantern Jack is a friendly ghost who appears with a glowing lantern, helping lost travelers find their way. He is often seen in dense forests or dark paths, providing light and guidance to those in need.</string>
+    <string name="scary_description_5">Fisherman Finn is a kind-hearted ghost who haunts coastal areas and fishing villages. He often helps fishermen find the best catches and warns them of impending storms, ensuring their safety on the water.</string>
+    <string name="scary_description_6">The Poisoned Soul is a ghost who died from poisoning. Despite the tragic end, this spirit seeks closure and understanding. They often appear to warn others of dangers and to share their story.</string>
+    <string name="scary_description_7">The Cat Ghost is the spirit of a beloved pet cat. It is often seen or felt curling up on laps or purring softly. This ghost brings a sense of warmth and companionship, reminding the living of the comfort pets provide</string>
+    <string name="scary_description_8">Tom is a friendly ghost often seen around homes and gardens. He is protective of those he cares about and enjoys keeping company with the living, providing a sense of comfort and security.</string>
+    <string name="scary_description_9">Bella is the spirit of a book lover who haunts libraries and bookstores. She enjoys helping readers find the perfect book and often leaves helpful notes in the margins. Her presence is comforting to fellow book enthusiasts.</string>
+    <string name="scary_description_10">Harmony is the spirit of a talented harpist who continues to play her beautiful music from beyond the grave. Her gentle melodies bring peace and comfort to those who hear them, often calming anxious souls.</string>
+
+    <string name="horror_name_1">The Witch Ghost</string>
+    <string name="horror_name_2">La Llorona</string>
+    <string name="horror_alias_2">(The Weeping Woman)</string>
+    <string name="horror_name_3">The Bell Witch</string>
+    <string name="horror_alias_3">(Kate Batts)</string>
+    <string name="horror_name_4">Bloody Mary</string>
+    <string name="horror_name_6">Ember</string>
+    <string name="horror_name_7">Wolf Man</string>
+    <string name="horror_name_8">The Woman in Black</string>
+    <string name="horror_name_9">The Rake</string>
+    <string name="horror_name_5">Valeria</string>
+    <string name="horror_alias_5">(The Vampire)</string>
+    <string name="horror_name_10">The Banshee</string>
+
+    <string name="horror_die_1">Centuries old</string>
+    <string name="horror_die_2"></string>
+    <string name="horror_die_3"></string>
+    <string name="horror_die_4"></string>
+    <string name="horror_die_5"></string>
+    <string name="horror_die_6"></string>
+    <string name="horror_die_7"></string>
+    <string name="horror_die_8">Over 100 years old</string>
+    <string name="horror_die_9"></string>
+    <string name="horror_die_10">Hundreds of years old</string>
+
+    <string name="horror_description_1">The spirit of a woman wrongfully accused of witchcraft. She haunts her execution site, seeking vengeance and instilling fear with her eerie cackling.</string>
+    <string name="horror_description_2">La Llorona is a legendary figure in Latin American folklore. She wanders the earth, crying and searching for her lost children, and is said to abduct and kill children she encounters.</string>
+    <string name="horror_description_3">The Bell Witch haunted the Bell family in Tennessee during the early 19th century, tormenting them with physical attacks, terrifying noises, and poltergeist activity, ultimately leading to the death of John Bell.</string>
+    <string name="horror_description_5">Valeria is a vampire who roams the night, seeking to quench her thirst for blood. Unlike many other vampires, she retains a semblance of her humanity and occasionally helps lost travelers. However, she must feed regularly to maintain her strength.</string>
+    <string name="horror_description_6">Ember is a spirit associated with fire. She appears as a glowing figure, often near places where fires have occurred. While her presence can be startling, she often warns people of fire hazards and helps prevent disasters.</string>
+    <string name="horror_description_4">Bloody Mary is a ghostly figure from Western folklore. She appears when her name is chanted multiple times in front of a mirror and is said to attack and mutilate those who called her.</string>
+    <string name="horror_description_7">The Wolf Man is a human cursed to transform into a werewolf during the full moon. In his human form, he seeks to control the beast within, but when transformed, he has little control over his actions. He tries to isolate himself to avoid harming others.</string>
+    <string name="horror_description_8">The Woman in Black is the ghost of a vengeful woman who lost her child. She haunts the living, causing death and despair to those who see her. Dressed in black mourning clothes, her presence brings an overwhelming sense of dread and sorrow.</string>
+    <string name="horror_description_9">The Rake is a horrifying creature said to lurk in the shadows, attacking those who encounter it. Described as humanoid with sharp claws and pale skin, it often appears at night, instilling fear and causing psychological torment to its victims.</string>
+    <string name="horror_description_10">The Banshee is a harbinger of death from Irish folklore. She appears as a wailing woman, often in white or gray, and her cries are said to foretell the death of a family member. Encountering her is terrifying, as her presence signifies impending doom.</string>
+
+    <string name="charlie_challenge_story">The "Charlie Challenge" involves summoning a spirit named "Charlie" using a pencil and paper to ask yes or no questions. It draws on supernatural folklore and urban legends about contacting spirits, gaining popularity through social media. Participants often believe they can communicate with Charlie, leading to spooky experiences and warnings about potential consequences.</string>
+    <string name="danger">Danger:</string>
+    <string name="age">Age:</string>
+    <string name="camera_is_not_available">Camera is not available!</string>
+    <string name="capture_image_failed">Capture image failed!</string>
+    <string name="result">Result</string>
+    <string name="talk">Talk</string>
+    <string name="yes">\u0020YES\u0020</string>
+    <string name="no">\u0020NO\u0020</string>
+    <string name="microphone_access">Microphone Access</string>
+    <string name="this_app_needs_access_to_the_microphone_to_talk_and_ask_now">This app needs access to the Microphone to talk and ask now.</string>
+    <string name="stop_and_ask">Stop And Ask</string>
+    <string name="please_select_a_language">Please select a language!</string>
+
 
 </resources>

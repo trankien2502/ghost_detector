@@ -8,5 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_D82D25">#D82D25</color>
+    <color name="gray">#585858</color>
+    <color name="ghostScanning">#337119</color>
     <color name="color_3A5EA3">#3A5EA3</color>
+    <color name="text_select">#3bed6d</color>
+    <color name="text_unselect">#bababa</color>
+
 </resources>

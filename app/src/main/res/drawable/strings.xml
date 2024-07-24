@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name" translatable="false">Lie Detector Test - Prank</string>
+
+    <string name="english" translatable="false">English</string>
+    <string name="french" translatable="false">French</string>
+    <string name="portuguese" translatable="false">Portuguese</string>
+    <string name="spanish" translatable="false">Spanish</string>
+    <string name="german" translatable="false">German</string>
+    <string name="hindi" translatable="false">Hindi</string>
+    <string name="indonesia" translatable="false">Indonesia</string>
+    <string name="china" translatable="false">China</string>
+
+    <string name="Send_Email">Send Email</string>
+    <string name="There_is_no">There is no</string>
+    <string name="thank_you">Thank you</string>
+    <string name="rate_us">Rate us</string>
+    <string name="not_now">Not now</string>
+    <string name="this_action_may_contain_advertising">This action may contain advertising</string>
+    <string name="your_opinion_matter_to_us">Your opinion matter to us</string>
+    <string name="if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then">If you enjoy this Lie Detector Test - Prank, would \nyou mind rating us on the Google Play, then?</string>
+    <string name="language">Language</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
+    <string name="feedback">Feedback</string>
+    <string name="report_bugs_and_tell_us_what_to_improve">Report bugs and tell us what to improve</string>
+    <string name="share_with_friends">Share with friends</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="request">Request or feedback</string>
+    <string name="send_email">Send by email&#8230;</string>
+    <string name="email_clients_not_found">Not found any Email client</string>
+    <string name="version">Version</string>
+    <string name="next">Next</string>
+    <string name="quit">Quit</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_intro_01">Title 01</string>
+    <string name="title_intro_02">Title 02</string>
+    <string name="title_intro_03">Title 03</string>
+    <string name="content_intro_01">Content 01</string>
+    <string name="content_intro_02">Content 02</string>
+    <string name="content_intro_03">Content 03</string>
+    <string name="continue_">Continue</string>
+    <string name="are_you_sure_want_to_quit_app">Are you sure want to quit app?</string>
+    <string name="no_internet_connection">No Internet Connection!</string>
+    <string name="sound_name_0">AIR HORN</string>
+    <string name="sound_name_1">LAUGH</string>
+    <string name="sound_name_2">CLAPS</string>
+    <string name="sound_name_3">WHISTLE</string>
+    <string name="sound_name_4">FART</string>
+    <string name="sound_name_5">PUNCH</string>
+    <string name="sound_name_6">OMG</string>
+    <string name="sound_name_7">POLICE</string>
+    <string name="sound_name_8">REMOTE</string>
+    <string name="sound_name_9">CAT</string>
+    <string name="sound_name_10">BROKE</string>
+    <string name="sound_name_11">MOUSE</string>
+    <string name="sound_name_12">DOG</string>
+    <string name="sound_name_13">BOMB</string>
+    <string name="sound_name_14">FART</string>
+    <string name="sound_name_15">DOOR</string>
+    <string name="sound_name_16">GHOST</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scanner">SCANNER</string>
+    <string name="sound">SOUND</string>
+    <string name="permission">PERMISSION</string>
+    <string name="permission_text">Allow Lie Detector to Access Microphone and Camera to work properly.</string>
+    <string name="microphone_access">Microphone Access</string>
+    <string name="camera_access">Camera Access</string>
+    <string name="continue_text">CONTINUE</string>
+    <string name="eyes">EYES</string>
+    <string name="lie_detector">LIE DETECTOR</string>
+    <string name="analyzing">Analyzing</string>
+    <string name="analyzing_">Analyzing.</string>
+    <string name="analyzing__">Analyzing..</string>
+    <string name="analyzing___">Analyzing...</string>
+    <string name="the_truth">THE TRUTH</string>
+    <string name="the_liar">THE LIAR</string>
+    <string name="click_here">CLICK HERE</string>
+    <string name="wait_5_seconds_to_scan">WAIT 5 SECONDS TO SCAN</string>
+    <string name="press_here">PRESS HERE</string>
+    <string name="detect_true_or_lie">DETECT TRUE OR LIE</string>
+    <string name="easily_find_the_lier_with_fingerprint_detection">Easily find the lier with fingerprint detection</string>
+    <string name="eye_scanner">EYE SCANNER</string>
+    <string name="scanning_eye_will_tell_you_the_truth">Scanning eye will tell you the truth</string>
+    <string name="funny_sound">FUNNY SOUND</string>
+    <string name="prank_sounds_list_makes_fun">Prank sounds list makes fun</string>
+    <string name="low_language">Language</string>
+    <string name="talk_to_scan">TALK TO SCAN</string>
+    <string name="press_to_talk">PRESS TO TALK</string>
+    <string name="air_horn">AIR HORN</string>
+    <string name="hair_clipper">HAIR CLIPPER</string>
+    <string name="permission_alert">Permission Alert!</string>
+    <string name="permission_text2">Some functions will not work properly if you do not enable all permission.</string>
+    <string name="ok">OK</string>
+    <string name="scan_successfully">Scan successfully</string>
+    <string name="setting">SETTING</string>
+    <string name="sounds">SOUNDS</string>
+    <string name="denied_mic">Microphone permission denied. Please enable it in settings.</string>
+    <string name="denied_camera">Camera permission denied. Please enable it in settings.</string>
+    <string name="camera_permission_is_already_granted">Camera permission is already granted</string>
+    <string name="microphone_permission_is_already_granted">Microphone permission is already granted</string>
+    <string name="finger">FINGER</string>
+    <string name="up_rate">RATE</string>
+    <string name="up_share">SHARE</string>
+    <string name="up_about">ABOUT</string>
+    <string name="forte_piano">FORTE PIANO</string>
+    <string name="hilarious">HILARIOUS</string>
+    <string name="funny">FUNNY</string>
+    <string name="you_tell_the_truth">YOU TELL THE TRUTH</string>
+    <string name="try_again_text">TRY AGAIN</string>
+    <string name="you_lie">YOU LIE</string>
+    <string name="wait">"WAIT "</string>
+    <string name="seconds_to_scan">" SECONDS TO SCAN"</string>
+    <string name="the_result_is_ready_now">The Result is ready NOW</string>
+    <string name="more_app">More App</string>
+    <string name="view_result">View result</string>
+    <string name="low_permission">Permission</string>
+    <string name="low_lie_detector">\"Lie Detector\"</string>
+    <string name="grant_these_permissions_to_use">Grant these permissions to use</string>
+    <string name="note_you_can_also_grant_permission_in">Note: You can also grant permission in</string>
+    <string name="setting_app_lie_detector"><![CDATA[Setting -> App -> Lie Detector ->]]></string>
+    <string name="microphone">Microphone</string>
+    <string name="camera">Camera</string>
+    <string name="stop_scan">Stop Scan?</string>
+    <string name="are_you_sure_you_want_to_stop_the_scanning_progress">Are you sure you want to stop the scanning progress?</string>
+    <string name="continue1">Continue</string>
+    <string name="eyes_scan">EYES SCAN</string>
+    <string name="sound_scan2">SOUND SCAN</string>
+    <string name="finger_scan">FINGER SCAN</string>
+    <string name="truth">TRUTH</string>
+    <string name="lie">LIE</string>
+    <string name="lie_detector1">Lie Detector</string>
+    <string name="text_splash">Prank your friends with a various type of tests and many funny sounds. Create funny moment now!</string>
+    <string name="todo">TODO</string>
+    <string name="start1">Start</string>
+    <string name="please_select_language">Please select language!</string>
+    <string name="stop">Stop</string>
+    <string name="install">Install</string>
+    <string name="ghost">GHOST</string>
+    <string name="capture">CAPTURE</string>
+    <string name="image_capture">IMAGE CAPTURE</string>
+    <string name="evp_levels">EVP LEVELS</string>
+    <string name="walk_around_slowly_to_detect_supernatural_entities">WALK AROUND SLOWLY TO DETECT SUPERNATURAL ENTITIES.....</string>
+    <string name="loading">Loading...</string>
+    <string name="_1234">1234</string>
+
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_camera_access"
+    android:layout_marginHorizontal="16dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tvMicrophoneAccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/microphone_access"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/svn_gilroy"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tvContentMicrophoneAccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/this_app_needs_access_to_the_microphone_to_talk_and_ask_now"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/svn_gilroy"
+        android:textColor="@color/white"
+        android:gravity="start"
+        android:lineSpacingExtra="1dp"
+        app:layout_constraintTop_toBottomOf="@id/tvMicrophoneAccess"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/tvContentMicrophoneAccess"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_marginHorizontal="24dp">
+        <TextView
+            android:id="@+id/btnDeny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/deny"
+            android:gravity="center"
+            android:fontFamily="@font/svn_gilroy"
+            android:background="@drawable/bg_camera_access_deny"
+            android:padding="15dp"/>
+        <TextView
+            android:id="@+id/btnAllow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="@string/allow"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:fontFamily="@font/svn_gilroy"
+            android:background="@drawable/bg_camera_access_allow"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

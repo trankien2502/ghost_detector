@@ -22,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.viewbinding.ViewBinding;
 
+import com.ghostdetctor.ghost_detector.ui.challenge.ChallengeLanscapeActivity;
 import com.ghostdetctor.ghost_detector.ui.intro.IntroActivity;
 import com.ghostdetctor.ghost_detector.util.SystemUtil;
 import com.ghostdetector.ghost_detector.R;
@@ -52,9 +53,9 @@ public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActi
 
         animation = AnimationUtils.loadAnimation(this, R.anim.onclick);
 
+
         initView();
         bindView();
-
         //make fully Android Transparent Status bar
         getWindow().setStatusBarColor(Color.TRANSPARENT);
 
@@ -62,7 +63,6 @@ public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActi
         getWindow().setNavigationBarColor(Color.TRANSPARENT);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-
 //        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
 //            @Override
 //            public void handleOnBackPressed() {
@@ -79,7 +79,6 @@ public abstract class BaseActivity<VB extends ViewBinding> extends AppCompatActi
                     binding.getRoot().getPaddingBottom()
             );
         }
-
         hideNavigation();
         createLoadingDialog();
     }

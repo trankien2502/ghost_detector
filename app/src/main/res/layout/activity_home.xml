@@ -1,104 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_background_home"
     android:gravity="center"
-    android:background="@drawable/bg"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/rl_language"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_setting_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="35dp"
+        android:src="@drawable/img_app_name"
+        android:layout_marginTop="66dp"
+        app:layout_constraintDimensionRatio="289:185"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:background="@color/color_3A5EA3">
-
+        android:layout_marginTop="374dp"
+        android:layout_marginHorizontal="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/ivStart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="240:80"
+            android:src="@drawable/img_home_start"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_8sdp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/language"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/start"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:background="@color/color_3A5EA3">
-
+            android:textSize="24sp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/bowlby_one_sc"
+            app:layout_constraintTop_toTopOf="@id/ivStart"
+            app:layout_constraintBottom_toBottomOf="@id/ivStart"
+            app:layout_constraintEnd_toEndOf="@id/ivStart"
+            app:layout_constraintStart_toStartOf="@id/ivStart"/>
+        <ImageView
+            android:id="@+id/ivChallenge"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/ivStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="240:80"
+            android:src="@drawable/img_home_challenge"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_8sdp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/rate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/challenge"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:background="@color/color_3A5EA3">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_8sdp"
+            android:textSize="24sp"
             android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/share"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </RelativeLayout>
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/bowlby_one_sc"
+            app:layout_constraintTop_toTopOf="@id/ivChallenge"
+            app:layout_constraintBottom_toBottomOf="@id/ivChallenge"
+            app:layout_constraintEnd_toEndOf="@id/ivChallenge"
+            app:layout_constraintStart_toStartOf="@id/ivChallenge"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <RelativeLayout
-        android:id="@+id/rl_policy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:background="@color/color_3A5EA3">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_8sdp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="@string/privacy_policy"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_12sdp"
-        android:background="@color/color_3A5EA3">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginVertical="@dimen/_8sdp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="Main"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </RelativeLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

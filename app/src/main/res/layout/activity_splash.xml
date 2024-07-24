@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:gravity="center">
 
     <ImageView
@@ -15,16 +16,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/bowlby_one_sc"
+        android:text="GHOST DETECTOR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_marginTop="23dp"/>
 
-    <ProgressBar
+    <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/pb_loading"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_40sdp"
-        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginBottom="8dp"
         android:indeterminate="true"
-        android:indeterminateTint="#D82D25"
+        app:trackColor="#074706"
+        app:indicatorColor="@color/white"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/tv_load"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +49,9 @@
         android:layout_marginBottom="@dimen/_96sdp"
         android:ellipsize="end"
         android:singleLine="true"
+        android:fontFamily="@font/svn_gilroy"
         android:text="@string/this_action_may_contain_advertising"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

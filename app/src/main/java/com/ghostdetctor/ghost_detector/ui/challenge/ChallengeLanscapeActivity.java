@@ -20,7 +20,10 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.ghostdetctor.ghost_detector.base.BaseActivity;
+import com.ghostdetctor.ghost_detector.dialog.reset.IClickDialogReset;
+import com.ghostdetctor.ghost_detector.dialog.reset.ResetDialog;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
+import com.ghostdetctor.ghost_detector.util.SharePrefUtils;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityChallengeLanscapeBinding;
 
@@ -29,6 +32,8 @@ import java.util.Random;
 public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLanscapeBinding> {
     private boolean isSoundOn;
     MediaPlayer mediaPlayerBackground;
+    public static boolean isChallengeLandscape;
+    boolean soundCheck = true;
     Handler handler = new Handler();
     private int degrees = 0;
     int plusDegree = 60;
@@ -44,13 +49,28 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
 
     @Override
     public void initView() {
+        isChallengeLandscape = true;
+        Log.e("challengeCheck","on create");
         isSoundOn = SPUtils.getBoolean(this,SPUtils.SOUND_CHALLENGE,true);
-        if (isSoundOn){
-            binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
-            playBackgroundSound();
-        } else {
+        Log.e("challengeCheck","isSoundOn "+isSoundOn);
+        if (!isSoundOn) {
             binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_off);
             stopBackgroundSound();
+        } else {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    soundCheck = SPUtils.getBoolean(ChallengeLanscapeActivity.this, SPUtils.SOUND_CHECK, true);
+                    if (!soundCheck) {
+                        handler.postDelayed(this, 100);
+                    } else {
+                        binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
+                        playBackgroundSound();
+                        handler.removeCallbacks(this);
+                        SPUtils.setBoolean(ChallengeLanscapeActivity.this, SPUtils.SOUND_CHECK, false);
+                    }
+                }
+            });
         }
         isPencilRolate = false;
         createAnimationTalking();
@@ -58,6 +78,7 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
 
     @Override
     public void bindView() {
+
         binding.ivBackChallenge.setOnClickListener(view -> onBackPressed());
         binding.ivStoryChallenge.setOnClickListener(view -> {
             resultLauncher.launch(new Intent(ChallengeLanscapeActivity.this, ChallengeStoryActivity.class));
@@ -76,13 +97,12 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
             }
         });
         binding.ivScreenChallenge.setOnClickListener(view -> {
-            resultLauncher.launch(new Intent(ChallengeLanscapeActivity.this, ChallengePortraitActivity.class));
+            resultLauncher.launch(new Intent(ChallengeLanscapeActivity.this, ChallengeLanscapeActivity.class));
             finish();
         });
         binding.ivTalk.setOnClickListener(view -> {
             if (isPencilRolate){
-                Toast.makeText(this, "Just some seconds to view result!", Toast.LENGTH_SHORT).show();
-                return;
+                Toast.makeText(this, getString(R.string.please_waiting_to_view_result), Toast.LENGTH_SHORT).show();                return;
             }
             binding.clTalk.setVisibility(GONE);
             binding.clStop.setVisibility(View.VISIBLE);
@@ -92,21 +112,52 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
             scaleDown.cancel();
             binding.clTalk.setVisibility(View.VISIBLE);
             binding.clStop.setVisibility(GONE);
-            startSecondHandAnimation();
+            isPencilRolate = true;
+            startPencilAnimation(isPencilRolate,0,0,0);
         });
         binding.ivReset.setOnClickListener(view -> {
-            handler.removeCallbacks(runnableRotatePencil);
-            isPencilRolate = false;
-            if (scaleDown!=null) scaleDown.cancel();
-            binding.clTalk.setVisibility(View.VISIBLE);
-            binding.clStop.setVisibility(GONE);
-            binding.ivPencilPortrait.clearAnimation();
-            binding.ivPencilPortrait.setRotation(0);
+            if (!isPencilRolate && degrees==0){
+                Toast.makeText(this, getString(R.string.pencil_already_reset), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            resetChallenge();
         });
     }
 
+
+    private void resetChallenge() {
+        ResetDialog resetDialog = new ResetDialog(this, true);
+        resetDialog.init(new IClickDialogReset() {
+            @Override
+            public void cancel() {
+                resetDialog.dismiss();
+            }
+
+            @Override
+            public void reset() {
+                resetDialog.dismiss();
+                handler.removeCallbacks(runnableRotatePencil);
+                isPencilRolate = false;
+                if (scaleDown!=null) scaleDown.cancel();
+                binding.clTalk.setVisibility(View.VISIBLE);
+                binding.clStop.setVisibility(GONE);
+                degrees=0;
+                binding.ivPencilPortrait.clearAnimation();
+                binding.ivPencilPortrait.setRotation(0);
+            }
+        });
+
+        try {
+            resetDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void onBackPressed() {
+        isChallengeLandscape = false;
+        Log.e("challengeCheck","on back");
+        startNextActivity(ChallengeHomeActivity.class,null);
         setResult(RESULT_OK);
         finish();
     }
@@ -120,13 +171,19 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
         scaleDown.setRepeatCount(ValueAnimator.INFINITE);
         scaleDown.setRepeatMode(ValueAnimator.REVERSE);
     }
-    private void startSecondHandAnimation() {
+    private void startPencilAnimation(boolean isPencilRolateLocal,int plusDegreeLocal,int timeEndLocal,int timeStopLocal) {
+        if (!isPencilRolateLocal) return;
         Random random = new Random();
-        plusDegree = 50 +  random.nextInt(41);
-        timeEnd = 3 + random.nextInt(5);
-        timeEnd *=10;
-        timeStop = 10+ random.nextInt(31);
-        isPencilRolate = true;
+        if (plusDegreeLocal!=0) plusDegree = plusDegreeLocal;
+        else
+            plusDegree = 45 +  random.nextInt(31);
+        if (timeEndLocal!=0) timeEnd = timeEndLocal;
+        else {
+            timeEnd = 3 + random.nextInt(5);
+            timeEnd *=10;
+        }
+        if (timeStopLocal!=0) timeStop = timeStopLocal;
+        else timeStop = 10+ random.nextInt(11);
         runnableRotatePencil = new Runnable() {
             @Override
             public void run() {
@@ -136,14 +193,20 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
                     isPencilRolate = false;
                 } else {
                     timeEnd --;
-                    if (plusDegree<=1||plusDegree*2/3==0) timeStop--;
-                    else plusDegree = plusDegree*2/3 +  random.nextInt(plusDegree*2/3);
+                    if (plusDegree<=1||plusDegree/4==0) {
+                        timeStop--;
+                        plusDegree=1;
+                    }
+                    else {
+                        if (random.nextInt(5)==2) plusDegree = plusDegree +  random.nextInt(plusDegree/2);
+                        else plusDegree = plusDegree*3/4 +  random.nextInt(plusDegree/4);
+                    }
                     Log.d("challengeCheck","plusDegree"+plusDegree);
                     Log.d("challengeCheck","timeEnd"+timeEnd);
                     Log.d("challengeCheck","timeStop"+timeStop);
                     RotateAnimation rotate = new RotateAnimation(degrees, degrees + plusDegree,
                             Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                    rotate.setDuration(100);
+                    rotate.setDuration(600);
                     rotate.setFillAfter(true);
                     rotate.setInterpolator(new LinearInterpolator());
                     binding.ivPencilPortrait.startAnimation(rotate);
@@ -151,57 +214,47 @@ public class ChallengeLanscapeActivity extends BaseActivity<ActivityChallengeLan
                     if (degrees >= 360) {
                         degrees = degrees%360;
                     }
-                    handler.postDelayed(this, 100);
+                    handler.postDelayed(this, 600);
                 }
             }
         };
-        handler.postDelayed(runnableRotatePencil, 100);
+        handler.post(runnableRotatePencil);
     }
-
 
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == RESULT_OK) {
             Log.e("activityCheck", "homeChallenge");
         }
     });
-
-    private void stopBackgroundSound() {
-        if (mediaPlayerBackground != null) {
-            mediaPlayerBackground.release();
-            mediaPlayerBackground = null;
-        }
-    }
-
-    private void playBackgroundSound() {
-        if (mediaPlayerBackground != null) {
-            mediaPlayerBackground.release();
-        }
-        mediaPlayerBackground = MediaPlayer.create(this, R.raw.background_sound);
-        mediaPlayerBackground.start();
-        mediaPlayerBackground.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                mediaPlayer.seekTo(0);
-                mediaPlayer.start();
-            }
-        });
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopBackgroundSound();
+        isChallengeLandscape = false;
+        handler.removeCallbacks(runnableRotatePencil);
+        isPencilRolate = false;
+        if (scaleDown!=null) scaleDown.cancel();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (isSoundOn) playBackgroundSound();
+        isChallengeLandscape = true;
+        Log.e("challengeCheck","on resume");
+        if (isSoundOn){
+            binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
+            playBackgroundSound();
+        } else {
+            binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_off);
+            stopBackgroundSound();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        isChallengeLandscape = false;
+        Log.e("challengeCheck","on stop");
         stopBackgroundSound();
+        SPUtils.setBoolean(ChallengeLanscapeActivity.this,SPUtils.SOUND_CHECK,true);
     }
 }

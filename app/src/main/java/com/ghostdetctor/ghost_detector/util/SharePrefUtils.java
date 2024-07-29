@@ -87,6 +87,28 @@ public class SharePrefUtils {
         editor.putInt("counts", pre.getInt("counts", 0) + 1);
         editor.commit();
     }
+    public static int getCountOpenChallenge(Context context) {
+        SharedPreferences pre = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        return pre.getInt("counts_challenge", 1);
+    }
+
+    public static void increaseCountOpenChallenge(Context context) {
+        SharedPreferences pre = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pre.edit();
+        editor.putInt("counts_challenge", pre.getInt("counts_challenge", 0) + 1);
+        editor.commit();
+    }
+    public static int getCountOpenGhost(Context context) {
+        SharedPreferences pre = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        return pre.getInt("counts_ghost", 1);
+    }
+
+    public static void increaseCountOpenGhost(Context context) {
+        SharedPreferences pre = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pre.edit();
+        editor.putInt("counts_ghost", pre.getInt("counts_ghost", 0) + 1);
+        editor.commit();
+    }
 
     public static void forceRated(Context context) {
         SharedPreferences pre = context.getSharedPreferences("data", Context.MODE_PRIVATE);

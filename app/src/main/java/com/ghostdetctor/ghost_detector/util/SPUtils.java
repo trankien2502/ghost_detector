@@ -10,10 +10,12 @@ public class SPUtils {
     public static String LANGUAGE = "LANGUAGE";
     public static String SOUND_GHOST_SCAN = "SOUND_GHOST_SCAN";
     public static String SOUND_CHALLENGE = "SOUND_CHALLENGE";
-    public static String OPTION_ON_GHOST_SCAN = "OPTION_ON_GHOST_SCAN";
     public static String GHOST_TYPE = "GHOST_TYPE";
     public static String SCARY_STORIES = "SCARY_STORIES";
     public static String GHOST_ID = "GHOST_ID";
+    public static String SOUND_POSITION = "SOUND_POSITION";
+    public static String SOUND_CHECK = "SOUND_CHECK";
+
 
 
     public static SharedPreferences getPref(Context context) {

@@ -18,8 +18,14 @@ public interface GhostDAO {
     @Query("SELECT * FROM ghost WHERE id == (:ghostId)")
     Ghost findByIds(int ghostId);
 
-    @Query("SELECT * FROM ghost WHERE isHorror == :isHorror AND imagePath != NULL")
-    List<Ghost> findByType(boolean isHorror);
+    @Query("SELECT * FROM ghost WHERE isHorror == :isHorror AND isCaptured == :isCaptured ")
+    List<Ghost> findByType(boolean isHorror,boolean isCaptured);
+
+    @Query("SELECT * FROM ghost WHERE isCaptured == :isCaptured ")
+    List<Ghost> getCollection(boolean isCaptured);
+
+    @Query("DELETE FROM ghost")
+    void deleteAllGhost();
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

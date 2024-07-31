@@ -4,18 +4,22 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
+    android:background="#00000000"
     android:orientation="vertical"
     android:layout_margin="20dp">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
-        android:layout_height="78dp"
+        android:layout_height="100dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/anim_loading" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bowlby_one_sc"
         android:text="@string/loading"
-        android:layout_marginTop="10dp"/>
+        android:textSize="16sp"
+        android:layout_marginTop="-20dp"/>
 </LinearLayout>

@@ -22,7 +22,7 @@
             android:fontFamily="@font/bowlby_one_sc"
             android:includeFontPadding="false"
             android:singleLine="true"
-            android:text="@string/quit"
+            android:text="@string/reset"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp" />
 
@@ -32,9 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:gravity="center"
-            android:fontFamily="@font/svn_gilroy"
             android:includeFontPadding="false"
-            android:text="@string/are_you_sure_want_to_quit_app"
+            android:fontFamily="@font/svn_gilroy"
+            android:text="@string/charlie_is_answering_your_question_are_you_sure_want_to_reset"
             android:textColor="@color/black"
             android:textSize="@dimen/_11ssp" />
 
@@ -67,8 +67,8 @@
                     android:ellipsize="end"
                     android:includeFontPadding="false"
                     android:singleLine="true"
-                    android:text="@string/cancel"
                     android:fontFamily="@font/svn_gilroy"
+                    android:text="@string/cancel"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_10ssp" />
             </RelativeLayout>
@@ -88,10 +88,10 @@
                     android:layout_centerInParent="true"
                     android:layout_marginVertical="@dimen/_8sdp"
                     android:ellipsize="end"
-                    android:includeFontPadding="false"
                     android:fontFamily="@font/svn_gilroy"
+                    android:includeFontPadding="false"
                     android:singleLine="true"
-                    android:text="@string/quit"
+                    android:text="@string/reset"
                     android:textColor="#FCFCFC"
                     android:textSize="@dimen/_10ssp" />
             </RelativeLayout>

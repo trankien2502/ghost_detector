@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ghost Detector</string>
+
+    <string name="scary_die_1">Desconocido</string>
+    <string name="scary_die_2">Desconocido</string>
+    <string name="scary_die_3">Desconocido</string>
+    <string name="scary_die_4">Desconocido</string>
+    <string name="scary_die_5">Desconocido</string>
+    <string name="scary_die_6">Desconocido</string>
+    <string name="scary_die_7">Desconocido</string>
+    <string name="scary_die_8">Desconocido</string>
+    <string name="scary_die_9">Desconocido</string>
+    <string name="scary_die_10">Desconocido</string>
+
+    <string name="Send_Email">Enviar correo electrónico</string>
+    <string name="There_is_no">No hay</string>
+    <string name="thank_you">Gracias</string>
+    <string name="rate_us">Nos califica</string>
+    <string name="not_now">Ahora no</string>
+    <string name="this_action_may_contain_advertising">Esta acción puede contener publicidad.</string>
+    <string name="your_opinion_matter_to_us">Tu opinión nos importa</string>
+    <string name="if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then">Si disfrutas de este Ghost Detector, ¿te importaría \n calificarnos en Google Play?</string>
+
+    <string name="language">Idioma</string>
+    <string name="rate">Tasa</string>
+    <string name="share">Compartir</string>
+    <string name="about">Acerca de</string>
+    <string name="feedback">Comentario</string>
+    <string name="report_bugs_and_tell_us_what_to_improve">Informar errores y decirnos qué mejorar</string>
+    <string name="share_with_friends">Compartir con amigos</string>
+    <string name="privacy_policy">Política de privacidad.</string>
+    <string name="request">Solicitud o comentarios</string>
+    <string name="send_email">Enviar por correo electrónico&#8230;</string>
+    <string name="email_clients_not_found">No se encontró ningún cliente de correo electrónico</string>
+    <string name="version">Versión 1.0.0</string>
+    <string name="next">Próximo</string>
+    <string name="quit">Abandonar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="continue_">Continuar</string>
+    <string name="are_you_sure_want_to_quit_app">¿Estás seguro de que quieres salir de la aplicación?</string>
+    <string name="no_internet_connection">¡Sin conexión a Internet!</string>
+    <string name="loading">Cargando</string>
+    <string name="option">Opción</string>
+    <string name="start">Comenzar</string>
+    <string name="challenge">Desafío</string>
+    <string name="horror_ghost">Fantasmas de terror</string>
+    <string name="scary_spirits">Espíritus aterradores</string>
+    <string name="start_scanning">Comenzar a escanear</string>
+    <string name="please_select_ghost_type">¡Seleccione el tipo de fantasma!</string>
+    <string name="camera_access">Acceso a la cámara</string>
+    <string name="this_app_needs_access_to_the_camera_to_take_a_photo_now">La aplicación necesita acceso a la cámara para tomar una foto ahora.</string>
+    <string name="deny">Denegar</string>
+    <string name="allow">Permitir</string>
+    <string name="walk_around_slowly_to_detect_supernatural_entities">CAMINAR LENTAMENTE PARA DETECTAR ENTIDADES SOBRENATURALES.....</string>
+    <string name="ghost_scanning">Escaneo fantasma</string>
+    <string name="evp_levels">NIVELES DE EVP</string>
+    <string name="tap_to_scan">Toca para escanear</string>
+    <string name="ghost_type">Tipo fantasma</string>
+    <string name="collection">Recopilación</string>
+    <string name="scary_stories">Historias de miedo</string>
+    <string name="description">Descripción</string>
+    <string name="ghost_detail">Detalle fantasma</string>
+    <string name="haunted_storytellers">Narradores embrujados</string>
+    <string name="horror_story_worldwide">Historia de terror en todo el mundo</string>
+    <string name="see_more">Ver más</string>
+    <string name="stories">Cuentos</string>
+
+    <string name="scary_name_1">El árbol fantasma</string>
+    <string name="scary_name_2">Lily el espíritu del jardín</string>
+    <string name="scary_name_3">Muñeca frecuentada</string>
+    <string name="scary_name_4">Jack Linterna</string>
+    <string name="scary_name_5">Pescador finlandés</string>
+    <string name="scary_name_6">alma envenenada</string>
+    <string name="scary_name_7">gato fantasma</string>
+    <string name="scary_name_8">Tomás</string>
+    <string name="scary_name_9">Ratón de biblioteca Bella</string>
+    <string name="scary_name_10">Armonía el arpista</string>
+
+    <string name="horror_name_1">El fantasma de la bruja</string>
+    <string name="horror_name_2">La llorona</string>
+    <string name="horror_alias_2">(La Llorona)</string>
+    <string name="horror_name_3">La bruja campana</string>
+    <string name="horror_alias_3">(Kate Batts)</string>
+    <string name="horror_name_4">Bloody Mary</string>
+    <string name="horror_name_6">Ascua</string>
+    <string name="horror_name_7">hombre lobo</string>
+    <string name="horror_name_8">La mujer de negro</string>
+    <string name="horror_name_9">El rastrillo</string>
+    <string name="horror_name_5">valeria</string>
+    <string name="horror_alias_5">(El vampiro)</string>
+    <string name="horror_name_10">el alma en pena</string>
+
+
+    <string name="horror_die_2">Desconocido</string>
+    <string name="horror_die_3">Desconocido</string>
+    <string name="horror_die_4">Desconocido</string>
+    <string name="horror_die_5">Desconocido</string>
+    <string name="horror_die_6">Desconocido</string>
+    <string name="horror_die_7">Desconocido</string>
+    <string name="horror_die_9">Desconocido</string>
+    <string name="horror_die_1">Siglos de antigüedad</string>
+    <string name="horror_die_8">Más de 100 años</string>
+    <string name="horror_die_10">Cientos de años</string>
+
+    <string name="haunted_title_1">El bibliotecario susurrante</string>
+    <string name="haunted_content_1">Estaba hojeando libros viejos en la biblioteca polvorienta cuando escuché un suave susurro. Me volví para ver la figura espectral de una bibliotecaria, con el dedo levantado hasta los labios. Señaló un libro olvidado en un estante alto. Cuando lo recuperé, sentí un escalofrío y escuché su voz contarme la trágica historia de un amor perdido hace mucho tiempo.</string>
+    <string name="haunted_footer_1">Entrevistado en el podcast de la biblioteca del casco antiguo.</string>
+    <string name="haunted_title_2">El poeta fantasmal</string>
+    <string name="haunted_content_2">Durante una noche de micrófono abierto, noté a un hombre con ropa pasada de moda recitando poemas. Sus palabras fueron inquietantes y la audiencia quedó fascinada. Cuando terminó, desapareció en el aire. Más tarde supe que era un poeta local que murió hace un siglo.</string>
+    <string name="haunted_footer_2">Compartido en el podcast "Tales from the Shadows".</string>
+    <string name="haunted_title_3">La fogata encantada</string>
+    <string name="haunted_content_3">Mientras acampábamos con amigos, nos reunimos alrededor de una fogata y una anciana se unió a nosotros. Comenzó a contar historias espeluznantes sobre el bosque y sus espíritus. Cuando amaneció, ella se había ido, dejando atrás sólo el olor a humo.</string>
+    <string name="haunted_footer_3">Contado en una entrevista del grupo de camping.</string>
+    <string name="haunted_title_4">El narrador maldito</string>
+    <string name="haunted_content_4">En una feria local, me topé con un narrador con una capa hecha jirones. Sus relatos de maldiciones y fantasmas eran fascinantes. Después de su actuación, desapareció entre la multitud y más tarde supe que había desaparecido hacía décadas.</string>
+    <string name="haunted_footer_4">Destacado en la publicación del blog "Local Legends".</string>
+    <string name="haunted_title_5">El niño espectral</string>
+    <string name="haunted_content_5">Una noche, mientras visitaba una antigua posada, escuché la risa de un niño. Seguí el sonido y encontré a una joven contando historias en una habitación vacía. Cuando me acerqué, ella sonrió pero luego se desvaneció.</string>
+    <string name="haunted_footer_5">Discutido durante un seminario web sobre caza de fantasmas.</string>
+
+    <string name="horror_title_1">La Dama Blanca (Europa)</string>
+    <string name="horror_content_1">La Dama Blanca es una aparición fantasmal que se ve en muchos países europeos, incluidos Alemania y la República Checa. A menudo se cree que es el espíritu de una mujer que murió trágicamente o fue traicionada por su amante. En el castillo de Houska, en la República Checa, testigos informaron haberla visto deambulando por los pasillos con un vestido blanco suelto. Se dice que es una advertencia de peligro inminente o muerte.</string>
+    <string name="horror_footer_1">Fuente: Folclore común en varios países europeos.</string>
+    <string name="horror_title_2">El Yurei (Japón)</string>
+    <string name="horror_content_2">Los yurei son fantasmas tradicionales japoneses, a menudo representados como espíritus de personas que murieron violentamente o con problemas sin resolver. Por lo general, se los representa vistiendo kimonos funerarios blancos y cabello largo y descuidado. Una historia famosa es la de Yurei de Okiku, una sirvienta que fue acusada falsamente de perder un plato valioso. Después de su muerte, regresó como un espíritu vengativo, contando hasta nueve y gritando cuando no pudo encontrar el décimo plato.</string>
+    <string name="horror_footer_2">Fuente: Folclore japonés y la historia de Okiku.</string>
+    <string name="horror_title_3">El diario embrujado</string>
+    <string name="horror_content_3">La Llorona, o "La Mujer que Llora", es una leyenda mexicana sobre una mujer llamada María que ahogó a sus hijos en un ataque de ira y luego se ahogó ella misma en la desesperación. Se dice que su espíritu deambula cerca de ríos y lagos, llorando y buscando a sus hijos perdidos. Escuchar sus gritos se considera un presagio de muerte.</string>
+    <string name="horror_footer_3">Fuente: folklore mexicano.</string>
+    <string name="horror_title_4">La bruja de las campanas (Estados Unidos)</string>
+    <string name="horror_content_4">La Bruja Campana es una famosa aparición estadounidense de principios del siglo XIX en Tennessee. La familia Bell fue atormentada por una entidad invisible que hablaba, movía objetos y los atacaba físicamente. El espíritu se identificó como Kate Batts, una vecina que había maldecido a la familia. La persecución culminó con la misteriosa muerte del patriarca de la familia, John Bell.</string>
+    <string name="horror_footer_4">Fuente: Folclore estadounidense y relatos históricos de Tennessee.</string>
+    <string name="horror_title_5">El cuadro del niño que llora (Reino Unido)</string>
+    <string name="horror_content_5">The Crying Boy es una serie de pinturas del pintor italiano Giovanni Bragolin, que se hizo famosa en el Reino Unido durante la década de 1980. Muchas casas que exhibían la pintura sufrieron incendios inexplicables y la pintura a menudo permaneció ilesa. Se difundieron teorías sobre una maldición que rodeaba la pintura, lo que provocó un miedo generalizado y la destrucción de muchas copias.</string>
+    <string name="horror_footer_5">Fuente: Leyenda urbana británica e informes de los medios de comunicación de la década de 1980.</string>
+
+    <string name="scary_description_2">Lily es un espíritu amable que cuida los jardines y las flores. A menudo se la ve regando plantas y cuidando jardines, brindando una sensación de tranquilidad y belleza natural a quienes la encuentran.</string>
+    <string name="scary_description_1">El Árbol Fantasma es un árbol espectral que aparece en los bosques encantados. Se dice que está habitado por los espíritus de quienes murieron cerca. El árbol en sí no hace daño, pero sirve como un faro para las almas perdidas, guiándolas al más allá.</string>
+    <string name="scary_description_3">Doll Haunt es una presencia fantasmal unida a una muñeca. Este espíritu a menudo trae una sensación de nostalgia y consuelo a quienes encuentran la muñeca. Le gusta ser parte de una familia y cuidar de los niños.</string>
+    <string name="scary_description_4">Lantern Jack es un fantasma amigable que aparece con una linterna brillante y ayuda a los viajeros perdidos a encontrar su camino. A menudo se le ve en bosques densos o senderos oscuros, brindando luz y orientación a quienes lo necesitan.</string>
+    <string name="scary_description_5">Fisherman Finn es un fantasma de buen corazón que ronda las zonas costeras y los pueblos de pescadores. A menudo ayuda a los pescadores a encontrar las mejores capturas y les advierte de tormentas inminentes, garantizando su seguridad en el agua.</string>
+    <string name="scary_description_6">El alma envenenada es un fantasma que murió envenenado. A pesar del trágico final, este espíritu busca cierre y comprensión. A menudo aparecen para advertir a otros sobre los peligros y compartir su historia.</string>
+    <string name="scary_description_7">El Cat Ghost es el espíritu de un querido gato mascota. A menudo se lo ve o siente acurrucado sobre el regazo o ronroneando suavemente. Este fantasma aporta una sensación de calidez y compañía, recordando a los vivos el consuelo que brindan las mascotas.</string>
+    <string name="scary_description_8">Tom es un fantasma amigable que se ve a menudo en casas y jardines. Es protector con sus seres queridos y le gusta estar en compañía de los vivos, brindándoles una sensación de comodidad y seguridad.</string>
+    <string name="scary_description_9">Bella es el espíritu de una amante de los libros que frecuenta bibliotecas y librerías. Le gusta ayudar a los lectores a encontrar el libro perfecto y, a menudo, deja notas útiles en los márgenes. Su presencia es reconfortante para los compañeros entusiastas de los libros.</string>
+    <string name="scary_description_10">La armonía es el espíritu de una talentosa arpista que continúa tocando su hermosa música desde más allá de la tumba. Sus suaves melodías traen paz y consuelo a quienes las escuchan, y a menudo calman las almas ansiosas.</string>
+
+
+    <string name="horror_description_1">El espíritu de una mujer acusada injustamente de brujería. Ella ronda el lugar de su ejecución, buscando venganza e infundiendo miedo con sus espeluznantes carcajadas.</string>
+    <string name="horror_description_2">La Llorona es una figura legendaria del folclore latinoamericano. Vaga por la tierra, llorando y buscando a sus hijos perdidos, y se dice que secuestra y mata a los niños que encuentra.</string>
+    <string name="horror_description_3">La Bruja Bell persiguió a la familia Bell en Tennessee a principios del siglo XIX, atormentándolos con ataques físicos, ruidos aterradores y actividad poltergeist, lo que finalmente llevó a la muerte de John Bell.</string>
+    <string name="horror_description_5">Valeria es una vampira que deambula por la noche buscando saciar su sed de sangre. A diferencia de muchos otros vampiros, ella conserva una apariencia de humanidad y ocasionalmente ayuda a los viajeros perdidos. Sin embargo, debe alimentarse con regularidad para mantener sus fuerzas.</string>
+    <string name="horror_description_6">Ember es un espíritu asociado con el fuego. Aparece como una figura brillante, a menudo cerca de lugares donde se han producido incendios. Si bien su presencia puede ser alarmante, a menudo advierte a la gente sobre los riesgos de incendio y ayuda a prevenir desastres.</string>
+    <string name="horror_description_4">Bloody Mary es una figura fantasmal del folclore occidental. Aparece cuando se canta su nombre varias veces frente a un espejo y se dice que ataca y mutila a quienes la llaman.</string>
+    <string name="horror_description_7">El Hombre Lobo es un humano condenado a transformarse en hombre lobo durante la luna llena. En su forma humana, busca controlar a la bestia interior, pero cuando se transforma, tiene poco control sobre sus acciones. Intenta aislarse para evitar dañar a los demás.</string>
+    <string name="horror_description_8">La Mujer de Negro es el fantasma de una mujer vengativa que perdió a su hijo. Ella persigue a los vivos, causando muerte y desesperación a quienes la ven. Vestida con ropas negras de luto, su presencia provoca una sensación abrumadora de temor y tristeza.</string>
+    <string name="horror_description_9">El Rastrillo es una criatura horrible que se dice que acecha en las sombras y ataca a quienes lo encuentran. Descrito como humanoide con garras afiladas y piel pálida, suele aparecer de noche, infundiendo miedo y tormento psicológico a sus víctimas.</string>
+    <string name="horror_description_10">La Banshee es un presagio de muerte del folclore irlandés. Aparece como una mujer que llora, a menudo vestida de blanco o gris, y se dice que sus llantos predicen la muerte de un miembro de la familia. Encontrarla es aterrador, ya que su presencia significa una perdición inminente.</string>
+
+    <string name="charlie_challenge_story">El "Desafío Charlie" consiste en convocar a un espíritu llamado "Charlie" usando lápiz y papel para hacer preguntas de sí o no. Se basa en folclore sobrenatural y leyendas urbanas sobre el contacto con espíritus, ganando popularidad a través de las redes sociales. Los participantes a menudo creen que pueden comunicarse con Charlie, lo que lleva a experiencias espeluznantes y advertencias sobre posibles consecuencias.</string>
+
+    <string name="danger">Peligro:</string>
+    <string name="age">Edad:</string>
+    <string name="camera_is_not_available">¡La cámara no está disponible!</string>
+    <string name="external_directory_is_not_available">¡El directorio externo no está disponible!</string>
+    <string name="capture_image_failed">¡Error al capturar la imagen!</string>
+    <string name="result">Resultado</string>
+    <string name="talk">Hablar</string>
+    <string name="microphone_access">Acceso al micrófono</string>
+    <string name="this_app_needs_access_to_the_microphone_to_talk_and_ask_now">Esta aplicación necesita acceso al micrófono para hablar y preguntar ahora.</string>
+    <string name="stop_and_ask">Detente y pregunta</string>
+    <string name="please_select_a_language">¡Por favor, seleccione un idioma!</string>
+    <string name="settings">Ajustes</string>
+    <string name="load_ghost_detail_failed">¡Error al cargar el detalle del fantasma!</string>
+    <string name="prank_your_friends">bromea con tus amigos</string>
+    <string name="scan_to_detect_ghosts">Escanear para detectar fantasmas</string>
+    <string name="discover_secret_of_ghost">Descubre el secreto del fantasma.</string>
+    <string name="permission_denied_please_go_to_setting_to_enable">¡Permiso denegado! Vaya a la configuración para habilitarlo.</string>
+    <string name="please_waiting_to_view_result">¡Espere para ver el resultado!</string>
+    <string name="reset">Reiniciar</string>
+    <string name="charlie_is_answering_your_question_are_you_sure_want_to_reset">Charlie está respondiendo a tu pregunta. ¿Estás seguro de que quieres restablecer?</string>
+    <string name="pencil_already_reset">¡El lápiz ya se reinició!</string>
+    <string name="click_to_talk">Haga clic para hablar</string>
+    <string name="tap_the_radar_to_scan_first">¡Toca el radar para escanear primero!</string>
+    <string name="no_ghost_in_here">No hay fantasmas aquí.</string>
+    <string name="you_need_to_capture_ghost_first">Primero debes capturar el fantasma.</string>
+    <string name="capturing_ghost">Capturando fantasma</string>
+    <string name="start_scan">Iniciar escaneo</string>
+
+</resources>

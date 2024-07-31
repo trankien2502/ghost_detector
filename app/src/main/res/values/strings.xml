@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ghost Detector</string>
+    <string name="app_name" translatable="false">Ghost Detector</string>
 
     <string name="english" translatable="false">English</string>
     <string name="french" translatable="false">French</string>
@@ -10,6 +10,35 @@
     <string name="indonesia" translatable="false">Indonesia</string>
     <string name="china" translatable="false">China</string>
 
+    <string name="haunted_teller_1" translatable="false">Sarah Mitchell,</string>
+    <string name="haunted_teller_2" translatable="false">Jake Thompson,</string>
+    <string name="haunted_teller_3" translatable="false">Emily Chen,</string>
+    <string name="haunted_teller_4" translatable="false">David Reynolds,</string>
+    <string name="haunted_teller_5" translatable="false">Lisa Carter,</string>
+
+    <string name="danger_0" translatable="false">0/10</string>
+    <string name="danger_1" translatable="false">1/10</string>
+    <string name="danger_2" translatable="false">2/10</string>
+    <string name="danger_3" translatable="false">3/10</string>
+    <string name="danger_4" translatable="false">4/10</string>
+    <string name="danger_5" translatable="false">5/10</string>
+    <string name="danger_6" translatable="false">6/10</string>
+    <string name="danger_7" translatable="false">7/10</string>
+    <string name="danger_8" translatable="false">8/10</string>
+    <string name="danger_9" translatable="false">9/10</string>
+    <string name="danger_10" translatable="false">10/10</string>
+
+    <string name="scary_die_1">Unknown</string>
+    <string name="scary_die_2">Unknown</string>
+    <string name="scary_die_3">Unknown</string>
+    <string name="scary_die_4">Unknown</string>
+    <string name="scary_die_5">Unknown</string>
+    <string name="scary_die_6">Unknown</string>
+    <string name="scary_die_7">Unknown</string>
+    <string name="scary_die_8">Unknown</string>
+    <string name="scary_die_9">Unknown</string>
+    <string name="scary_die_10">Unknown</string>
+
     <string name="Send_Email">Send Email</string>
     <string name="There_is_no">There is no</string>
     <string name="thank_you">Thank you</string>
@@ -17,7 +46,7 @@
     <string name="not_now">Not now</string>
     <string name="this_action_may_contain_advertising">This action may contain advertising</string>
     <string name="your_opinion_matter_to_us">Your opinion matter to us</string>
-    <string name="if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then">If you enjoy this BaseProduct, would \nyou mind rating us on the Google Play, then?</string>
+    <string name="if_you_enjoy_this_know_your_device_would_you_mind_rating_us_on_the_google_play_then">If you enjoy this Ghost Detector, would \nyou mind rating us on the Google Play, then?</string>
 
     <string name="language">Language</string>
     <string name="rate">Rate</string>
@@ -30,20 +59,14 @@
     <string name="request">Request or feedback</string>
     <string name="send_email">Send by email&#8230;</string>
     <string name="email_clients_not_found">Not found any Email client</string>
-    <string name="version">Version</string>
+    <string name="version">Version 1.0.0</string>
     <string name="next">Next</string>
     <string name="quit">Quit</string>
     <string name="cancel">Cancel</string>
-    <string name="title_intro_01">Title 01</string>
-    <string name="title_intro_02">Title 02</string>
-    <string name="title_intro_03">Title 03</string>
-    <string name="content_intro_01">Content 01</string>
-    <string name="content_intro_02">Content 02</string>
-    <string name="content_intro_03">Content 03</string>
     <string name="continue_">Continue</string>
     <string name="are_you_sure_want_to_quit_app">Are you sure want to quit app?</string>
     <string name="no_internet_connection">No Internet Connection!</string>
-    <string name="loading">Loading…</string>
+    <string name="loading">Loading</string>
     <string name="option">Option</string>
     <string name="start">Start</string>
     <string name="challenge">Challenge</string>
@@ -63,15 +86,51 @@
     <string name="collection">Collection</string>
     <string name="scary_stories">Scary Stories</string>
     <string name="description">Description</string>
-    <string name="_test">Fisherman Finn is a kind-hearted ghost who haunts coastal areas and fishing villages. He often helps fishermen find the best catches and warns them of impending storms, ensuring their safety on the water.</string>
     <string name="ghost_detail">Ghost Detail</string>
+    <string name="haunted_storytellers">Haunted Storytellers</string>
+    <string name="horror_story_worldwide">Horror Story Worldwide</string>
+    <string name="see_more">See more</string>
+    <string name="stories">Stories</string>
+
+    <string name="scary_name_1">The Ghost Tree</string>
+    <string name="scary_name_2">Lily the Garden Spirit</string>
+    <string name="scary_name_3">Doll Haunt</string>
+    <string name="scary_name_4">Lantern Jack</string>
+    <string name="scary_name_5">Fisherman Finn</string>
+    <string name="scary_name_6">Poisoned Soul</string>
+    <string name="scary_name_7">Cat Ghost</string>
+    <string name="scary_name_8">Tom</string>
+    <string name="scary_name_9">Bookworm Bella</string>
+    <string name="scary_name_10">Harmony the Harpist</string>
+
+    <string name="horror_name_1">The Witch Ghost</string>
+    <string name="horror_name_2">La Llorona</string>
+    <string name="horror_alias_2">(The Weeping Woman)</string>
+    <string name="horror_name_3">The Bell Witch</string>
+    <string name="horror_alias_3">(Kate Batts)</string>
+    <string name="horror_name_4">Bloody Mary</string>
+    <string name="horror_name_6">Ember</string>
+    <string name="horror_name_7">Wolf Man</string>
+    <string name="horror_name_8">The Woman in Black</string>
+    <string name="horror_name_9">The Rake</string>
+    <string name="horror_name_5">Valeria</string>
+    <string name="horror_alias_5">(The Vampire)</string>
+    <string name="horror_name_10">The Banshee</string>
+
+
+    <string name="horror_die_2">Unknown</string>
+    <string name="horror_die_3">Unknown</string>
+    <string name="horror_die_4">Unknown</string>
+    <string name="horror_die_5">Unknown</string>
+    <string name="horror_die_6">Unknown</string>
+    <string name="horror_die_7">Unknown</string>
+    <string name="horror_die_9">Unknown</string>
+    <string name="horror_die_1">Centuries old</string>
+    <string name="horror_die_8">Over 100 years old</string>
+    <string name="horror_die_10">Hundreds of years old</string>
+
     <string name="haunted_title_1">The Whispering Librarian</string>
     <string name="haunted_content_1">I was browsing old books in the dusty library when I heard a soft whisper. I turned to see a spectral figure of a librarian, her finger raised to her lips. She gestured toward a forgotten book on a high shelf. When I retrieved it, I felt a chill and heard her voice tell me the tragic tale of a love lost long ago.</string>
-    <string name="haunted_teller_1" translatable="false">Sarah Mitchell,</string>
-    <string name="haunted_teller_2" translatable="false">Jake Thompson,</string>
-    <string name="haunted_teller_3" translatable="false">Emily Chen,</string>
-    <string name="haunted_teller_4" translatable="false">David Reynolds,</string>
-    <string name="haunted_teller_5" translatable="false">Lisa Carter,</string>
     <string name="haunted_footer_1">Interviewed at the Old Town Library Podcast.</string>
     <string name="haunted_title_2">The Ghostly Poet</string>
     <string name="haunted_content_2">During an open mic night, I noticed a man in old-fashioned clothing reciting poems. His words were haunting, and the audience was entranced. When he finished, he vanished into thin air. Later, I learned he was a local poet who died a century ago.</string>
@@ -102,46 +161,6 @@
     <string name="horror_content_5">The Crying Boy is a series of paintings by Italian painter Giovanni Bragolin, which became infamous in the UK during the 1980s. Many houses that displayed the painting experienced unexplained fires, and the painting often remained unscathed. Theories about a curse surrounding the painting spread, leading to widespread fear and the destruction of many copies.</string>
     <string name="horror_footer_5">Source: British urban legend and media reports from the 1980s.</string>
 
-    <string name="haunted_storytellers">Haunted Storytellers</string>
-    <string name="horror_story_worldwide">Horror Story Worldwide</string>
-
-    <string name="see_more">See more</string>
-    <string name="stories">Stories</string>
-
-    <string name="danger_0" translatable="false">0/10</string>
-    <string name="danger_1" translatable="false">1/10</string>
-    <string name="danger_2" translatable="false">2/10</string>
-    <string name="danger_3" translatable="false">3/10</string>
-    <string name="danger_4" translatable="false">4/10</string>
-    <string name="danger_5" translatable="false">5/10</string>
-    <string name="danger_6" translatable="false">6/10</string>
-    <string name="danger_7" translatable="false">7/10</string>
-    <string name="danger_8" translatable="false">8/10</string>
-    <string name="danger_9" translatable="false">9/10</string>
-    <string name="danger_10" translatable="false">10/10</string>
-
-    <string name="scary_name_1">The Ghost Tree</string>
-    <string name="scary_name_2">Lily the Garden Spirit</string>
-    <string name="scary_name_3">Doll Haunt</string>
-    <string name="scary_name_4">Lantern Jack</string>
-    <string name="scary_name_5">Fisherman Finn</string>
-    <string name="scary_name_6">Poisoned Soul</string>
-    <string name="scary_name_7">Cat Ghost</string>
-    <string name="scary_name_8">Tom</string>
-    <string name="scary_name_9">Bookworm Bella</string>
-    <string name="scary_name_10">Harmony the Harpist</string>
-
-    <string name="scary_die_1"></string>
-    <string name="scary_die_2"></string>
-    <string name="scary_die_3"></string>
-    <string name="scary_die_4"></string>
-    <string name="scary_die_5"></string>
-    <string name="scary_die_6"></string>
-    <string name="scary_die_7"></string>
-    <string name="scary_die_8"></string>
-    <string name="scary_die_9"></string>
-    <string name="scary_die_10"></string>
-
     <string name="scary_description_2">Lily is a gentle spirit who tends to gardens and flowers. She is often seen watering plants and nurturing gardens, bringing a sense of tranquility and natural beauty to those who encounter her</string>
     <string name="scary_description_1">The Ghost Tree is a spectral tree that appears in haunted forests. It is said to be inhabited by the spirits of those who died nearby. The tree itself does no harm, but it serves as a beacon for lost souls, guiding them to the afterlife.</string>
     <string name="scary_description_3">The Doll Haunt is a ghostly presence attached to a doll. This spirit often brings a sense of nostalgia and comfort to those who find the doll. It enjoys being part of a family and watching over children.</string>
@@ -153,30 +172,6 @@
     <string name="scary_description_9">Bella is the spirit of a book lover who haunts libraries and bookstores. She enjoys helping readers find the perfect book and often leaves helpful notes in the margins. Her presence is comforting to fellow book enthusiasts.</string>
     <string name="scary_description_10">Harmony is the spirit of a talented harpist who continues to play her beautiful music from beyond the grave. Her gentle melodies bring peace and comfort to those who hear them, often calming anxious souls.</string>
 
-    <string name="horror_name_1">The Witch Ghost</string>
-    <string name="horror_name_2">La Llorona</string>
-    <string name="horror_alias_2">(The Weeping Woman)</string>
-    <string name="horror_name_3">The Bell Witch</string>
-    <string name="horror_alias_3">(Kate Batts)</string>
-    <string name="horror_name_4">Bloody Mary</string>
-    <string name="horror_name_6">Ember</string>
-    <string name="horror_name_7">Wolf Man</string>
-    <string name="horror_name_8">The Woman in Black</string>
-    <string name="horror_name_9">The Rake</string>
-    <string name="horror_name_5">Valeria</string>
-    <string name="horror_alias_5">(The Vampire)</string>
-    <string name="horror_name_10">The Banshee</string>
-
-    <string name="horror_die_1">Centuries old</string>
-    <string name="horror_die_2"></string>
-    <string name="horror_die_3"></string>
-    <string name="horror_die_4"></string>
-    <string name="horror_die_5"></string>
-    <string name="horror_die_6"></string>
-    <string name="horror_die_7"></string>
-    <string name="horror_die_8">Over 100 years old</string>
-    <string name="horror_die_9"></string>
-    <string name="horror_die_10">Hundreds of years old</string>
 
     <string name="horror_description_1">The spirit of a woman wrongfully accused of witchcraft. She haunts her execution site, seeking vengeance and instilling fear with her eerie cackling.</string>
     <string name="horror_description_2">La Llorona is a legendary figure in Latin American folklore. She wanders the earth, crying and searching for her lost children, and is said to abduct and kill children she encounters.</string>
@@ -190,18 +185,34 @@
     <string name="horror_description_10">The Banshee is a harbinger of death from Irish folklore. She appears as a wailing woman, often in white or gray, and her cries are said to foretell the death of a family member. Encountering her is terrifying, as her presence signifies impending doom.</string>
 
     <string name="charlie_challenge_story">The "Charlie Challenge" involves summoning a spirit named "Charlie" using a pencil and paper to ask yes or no questions. It draws on supernatural folklore and urban legends about contacting spirits, gaining popularity through social media. Participants often believe they can communicate with Charlie, leading to spooky experiences and warnings about potential consequences.</string>
+
     <string name="danger">Danger:</string>
     <string name="age">Age:</string>
     <string name="camera_is_not_available">Camera is not available!</string>
+    <string name="external_directory_is_not_available">External directory is not available!</string>
     <string name="capture_image_failed">Capture image failed!</string>
     <string name="result">Result</string>
     <string name="talk">Talk</string>
-    <string name="yes">\u0020YES\u0020</string>
-    <string name="no">\u0020NO\u0020</string>
+    <string name="yes" translatable="false">\u0020YES\u0020</string>
+    <string name="no" translatable="false">\u0020NO\u0020</string>
     <string name="microphone_access">Microphone Access</string>
     <string name="this_app_needs_access_to_the_microphone_to_talk_and_ask_now">This app needs access to the Microphone to talk and ask now.</string>
     <string name="stop_and_ask">Stop And Ask</string>
     <string name="please_select_a_language">Please select a language!</string>
-
-
+    <string name="settings">Settings</string>
+    <string name="load_ghost_detail_failed">Load ghost detail failed!</string>
+    <string name="prank_your_friends">Prank your friends</string>
+    <string name="scan_to_detect_ghosts">Scan to detect ghosts</string>
+    <string name="discover_secret_of_ghost">Discover secret of ghost</string>
+    <string name="permission_denied_please_go_to_setting_to_enable">Permission denied! Please go to setting to enable.</string>
+    <string name="please_waiting_to_view_result">Please waiting to view result!</string>
+    <string name="reset">Reset</string>
+    <string name="charlie_is_answering_your_question_are_you_sure_want_to_reset">Charlie is answering your question. Are you sure want to reset?</string>
+    <string name="pencil_already_reset">Pencil already reset!</string>
+    <string name="click_to_talk">Click to talk</string>
+    <string name="tap_the_radar_to_scan_first">Tap the radar to scan first!</string>
+    <string name="no_ghost_in_here">No ghost in here.</string>
+    <string name="you_need_to_capture_ghost_first">You need to capture ghost first.</string>
+    <string name="capturing_ghost">Capturing ghost</string>
+    <string name="start_scan">Start Scan</string>
 </resources>

@@ -22,8 +22,10 @@ import com.ghostdetctor.ghost_detector.dialog.exit.IClickDialogExit;
 import com.ghostdetctor.ghost_detector.dialog.rate.IClickDialogRate;
 import com.ghostdetctor.ghost_detector.dialog.rate.RatingDialog;
 import com.ghostdetctor.ghost_detector.ui.challenge.ChallengeHomeActivity;
+import com.ghostdetctor.ghost_detector.ui.challenge.service.SoundService;
 import com.ghostdetctor.ghost_detector.ui.ghost.OptionActivity;
 import com.ghostdetctor.ghost_detector.ui.setting.SettingActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetctor.ghost_detector.util.SharePrefUtils;
 import com.ghostdetector.ghost_detector.R;
@@ -53,19 +55,22 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
 
     @Override
     public void initView() {
-
+        EventTracking.logEvent(this,"home_view");
     }
 
     @Override
     public void bindView() {
         binding.ivStart.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"home_start_click");
             resultLauncher.launch(new Intent(HomeActivity.this, OptionActivity.class));
 
         });
         binding.ivChallenge.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"home_challenge_click");
             resultLauncher.launch(new Intent(HomeActivity.this, ChallengeHomeActivity.class));
         });
         binding.ivSetting.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"home_setting_click");
             resultLauncher.launch(new Intent(HomeActivity.this, SettingActivity.class));
         });
     }
@@ -91,6 +96,8 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
                     finishAffinity();
                     startActivity(Intent.createChooser(sendIntent, getString(R.string.Send_Email)));
                     SharePrefUtils.forceRated(HomeActivity.this);
+                    int star = SPUtils.getInt(HomeActivity.this,SPUtils.RATE_STAR,0);
+                    EventTracking.logEvent(HomeActivity.this,"rate_submit","rate_star"+star,String.valueOf(star));
                 } catch (android.content.ActivityNotFoundException ex) {
                     Toast.makeText(HomeActivity.this, getString(R.string.There_is_no), Toast.LENGTH_SHORT).show();
                 }
@@ -106,6 +113,8 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
                         Task<Void> flow = manager.launchReviewFlow(HomeActivity.this, reviewInfo);
                         flow.addOnSuccessListener(result -> {
                             //binding.rlRate.setVisibility(View.GONE);
+                            int star = SPUtils.getInt(HomeActivity.this,SPUtils.RATE_STAR,0);
+                            EventTracking.logEvent(HomeActivity.this,"rate_submit","rate_star"+star,String.valueOf(star));
                             SharePrefUtils.forceRated(HomeActivity.this);
                             ratingDialog.dismiss();
                             finishAffinity();
@@ -118,12 +127,14 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
 
             @Override
             public void later() {
+                EventTracking.logEvent(HomeActivity.this,"rate_not_now");
                 ratingDialog.dismiss();
                 finishAffinity();
             }
 
         });
         ratingDialog.show();
+        EventTracking.logEvent(this,"rate_show");
     }
 
 
@@ -160,5 +171,13 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
         } else {
             exitApp();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Intent intent = new Intent(this, SoundService.class);
+        stopService(intent);
+        SPUtils.setInt(this,SPUtils.SOUND_POSITION,0);
     }
 }

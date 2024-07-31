@@ -22,29 +22,75 @@
         android:theme="@style/Theme.Ghost_detector"
         tools:targetApi="n">
         <activity
-            android:name="com.ghostdetctor.ghost_detector.ui.setting.SettingActivity"
+            android:name="com.ghostdetctor.ghost_detector.ui.challenge.ChallengeStoryLandscapeActivity"
+            android:screenOrientation="landscape"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
             android:exported="false" />
+
+        <service android:name="com.ghostdetctor.ghost_detector.ui.challenge.service.SoundService" />
+
+        <receiver
+            android:name="com.ghostdetctor.ghost_detector.ui.challenge.service.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.ghost.TypeGhostActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.setting.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name="com.ghostdetctor.ghost_detector.ui.setting.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.challenge.ChallengeStoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.challenge.ChallengeLanscapeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.challenge.ChallengePortraitActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.challenge.ChallengeHomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.ghost.story.StoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.ghost.story.ScaryStoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name="com.ghostdetctor.ghost_detector.ui.ghost.collection.CollectionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

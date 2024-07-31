@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 import com.ghostdetctor.ghost_detector.base.BaseActivity;
+import com.ghostdetctor.ghost_detector.ui.home.HomeActivity;
 import com.ghostdetctor.ghost_detector.ui.intro.IntroActivity;
 import com.ghostdetctor.ghost_detector.ui.language.adapter.LanguageStartAdapter;
 import com.ghostdetctor.ghost_detector.ui.language.model.LanguageModel;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetctor.ghost_detector.util.SystemUtil;
 import com.ghostdetector.ghost_detector.R;
@@ -32,16 +34,14 @@ public class LanguageStartActivity extends BaseActivity<ActivityLanguageStartBin
 
     @Override
     public void initView() {
+        EventTracking.logEvent(this,"language_fo_open");
         initData();
-        //codeLang = Locale.getDefault().getLanguage();
         binding.tvTitle.setText(getString(R.string.language));
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         LanguageStartAdapter languageStartAdapter = new LanguageStartAdapter(listLanguage, languageModel -> {
             codeLang = languageModel.getCode();
             nameLang = languageModel.getName();
             }, this);
-        //languageStartAdapter.setCheck(SystemUtil.getPreLanguage(getBaseContext()));
         binding.rcvLangStart.setLayoutManager(linearLayoutManager);
         binding.rcvLangStart.setAdapter(languageStartAdapter);
     }
@@ -49,6 +49,7 @@ public class LanguageStartActivity extends BaseActivity<ActivityLanguageStartBin
     @Override
     public void bindView() {
         binding.ivGone.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"language_fo_save_click");
             if (codeLang==null || codeLang.isEmpty()){
                 Toast.makeText(this, R.string.please_select_a_language, Toast.LENGTH_SHORT).show();
                 return;
@@ -57,6 +58,7 @@ public class LanguageStartActivity extends BaseActivity<ActivityLanguageStartBin
             SPUtils.setString(this,SPUtils.LANGUAGE,nameLang);
             startNextActivity(IntroActivity.class, null);
             finishAffinity();
+            updateLanguageDatabase();
         });
     }
 

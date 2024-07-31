@@ -23,12 +23,14 @@
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:fontFamily="@font/bowlby_one_sc"
         android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:text="@string/option"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivGone"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -37,7 +39,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/img_setting_tick"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

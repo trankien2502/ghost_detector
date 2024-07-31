@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:layout_height="match_parent">
-
+    tools:context="com.ghostdetctor.ghost_detector.ui.setting.AboutActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clHeader"
         android:layout_width="match_parent"
@@ -39,43 +40,42 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <WebView
-        android:id="@+id/web_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clHeader" />
-
-    <LinearLayout
-        android:id="@+id/ln_no_internet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clHeader"
+        android:layout_marginTop="108dp"
+        android:src="@drawable/img_logo"/>
+    <TextView
+        android:id="@+id/ver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:layout_marginTop="78dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clHeader">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_marginTop="24dp"
+        android:textStyle="normal"
+        android:text="@string/version"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/svn_gilroy"/>
+    <TextView
+        android:id="@+id/privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ver"
+        android:layout_marginTop="63dp"
+        android:textStyle="bold"
+        android:text="@string/privacy_policy"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/svn_gilroy"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:contentDescription="@string/no_internet_connection"
-            android:src="@drawable/ic_no_internet" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/_12ssp"
-            android:includeFontPadding="false"
-            android:text="@string/no_internet_connection"
-            android:textColor="@color/white" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

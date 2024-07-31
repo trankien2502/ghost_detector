@@ -15,6 +15,7 @@ public class SPUtils {
     public static String GHOST_ID = "GHOST_ID";
     public static String SOUND_POSITION = "SOUND_POSITION";
     public static String SOUND_CHECK = "SOUND_CHECK";
+    public static String RATE_STAR = "RATE_STAR";
 
 
 

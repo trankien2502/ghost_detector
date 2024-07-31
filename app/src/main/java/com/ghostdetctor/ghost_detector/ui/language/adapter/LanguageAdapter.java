@@ -76,7 +76,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langug
 
         holder.layoutItem.setOnClickListener(v -> {
             setCheck(languageModel.getCode());
-            iClickLanguage.onClickItemLanguage(languageModel.getCode());
+            iClickLanguage.onClickItemLanguage(languageModel);
             notifyDataSetChanged();
         });
 

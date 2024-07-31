@@ -20,9 +20,7 @@ public class PolicyActivity extends BaseActivity<ActivityPolicyBinding> {
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public void initView() {
-        binding.viewTop.tvToolBar.setText(getString(R.string.privacy_policy));
-
-        binding.viewTop.ivCheck.setVisibility(View.INVISIBLE);
+        binding.tvTitle.setText(getString(R.string.privacy_policy));
 
         if (!linkPolicy.isEmpty() && IsNetWork.haveNetworkConnection(this)) {
             binding.webView.setVisibility(View.VISIBLE);
@@ -41,7 +39,7 @@ public class PolicyActivity extends BaseActivity<ActivityPolicyBinding> {
 
     @Override
     public void bindView() {
-        binding.viewTop.ivBack.setOnClickListener(v -> onBackPressed());
+        binding.ivGone.setOnClickListener(v -> onBackPressed());
     }
 
 }

@@ -18,6 +18,7 @@ import com.ghostdetctor.ghost_detector.base.BaseActivity;
 import com.ghostdetctor.ghost_detector.dialog.camera_access.CameraAccessDialog;
 import com.ghostdetctor.ghost_detector.dialog.camera_access.IClickDialogCameraAccess;
 import com.ghostdetctor.ghost_detector.ui.home.HomeActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityOptionBinding;
@@ -29,7 +30,6 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
     private final int REQUEST_CODE_CAMERA_PERMISSION = 130;
     private int countCamera = 0;
     private int ghostType = 0;
-    private boolean isOptionOnGhostScan;
     @Override
     public ActivityOptionBinding getBinding() {
         return ActivityOptionBinding.inflate(getLayoutInflater());
@@ -37,11 +37,10 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
 
     @Override
     public void initView() {
+        EventTracking.logEvent(this,"option_view");
         binding.optionHeader.tvTitle.setText(R.string.option);
         ghostType = SPUtils.getInt(this,SPUtils.GHOST_TYPE,0);
-        isOptionOnGhostScan = SPUtils.getBoolean(this,SPUtils.OPTION_ON_GHOST_SCAN,false);
         Log.e("isCheck", "ghostType "+ghostType);
-        Log.e("isCheck", "isOptionOnGhostScan "+isOptionOnGhostScan);
         if (ghostType==TYPE_HORROR_GHOSTS){
             binding.clHorror.setVisibility(View.INVISIBLE);
             binding.clScary.setVisibility(View.VISIBLE);
@@ -72,9 +71,11 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
     public void bindView() {
         binding.optionHeader.ivBack.setOnClickListener(view -> onBackPressed());
         binding.clStart.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"option_start_scanning_click");
             Toast.makeText(this, getString(R.string.please_select_ghost_type), Toast.LENGTH_SHORT).show();
         });
         binding.ivScary.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"option_scary_spirits_click");
             ghostType = TYPE_SCARY_SPIRITS;
             binding.clHorror.setVisibility(View.VISIBLE);
             binding.clScary.setVisibility(View.INVISIBLE);
@@ -84,6 +85,7 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
             binding.clStartSelect.setVisibility(View.VISIBLE);
         });
         binding.ivHorror.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"option_horror_ghosts_click");
             ghostType = TYPE_HORROR_GHOSTS;
             binding.clHorror.setVisibility(View.INVISIBLE);
             binding.clScary.setVisibility(View.VISIBLE);
@@ -93,16 +95,9 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
             binding.clStartSelect.setVisibility(View.VISIBLE);
         });
         binding.clStartSelect.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"option_start_scanning_click");
             if (checkCameraPermission()){
-                //startNextActivity(GhostScanActivity.class,null);
-                if (!isOptionOnGhostScan){
-                    resultLauncher.launch(new Intent(OptionActivity.this, GhostActivity.class));
-                    Log.e("isCheck", "ghostType"+ghostType);
-                } else {
-                    isOptionOnGhostScan = false;
-                    SPUtils.setBoolean(this,SPUtils.OPTION_ON_GHOST_SCAN,isOptionOnGhostScan);
-                    Log.e("isCheck", "isOptionOnGhostScan "+SPUtils.getBoolean(this,SPUtils.OPTION_ON_GHOST_SCAN,false));
-                }
+                resultLauncher.launch(new Intent(OptionActivity.this, GhostActivity.class));
                 SPUtils.setInt(this,SPUtils.GHOST_TYPE,ghostType);
                 finish();
             }else {
@@ -141,7 +136,9 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CODE_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                startNextActivity(OptionActivity.class,null);
+                resultLauncher.launch(new Intent(OptionActivity.this, GhostActivity.class));
+                SPUtils.setInt(this,SPUtils.GHOST_TYPE,ghostType);
+                finish();
             }
 
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_DENIED) {
@@ -160,7 +157,7 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
     }
 
     private void showDialogGotoSetting() {
-        Toast.makeText(this, "Permission denied! Please go to setting to enable.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.permission_denied_please_go_to_setting_to_enable), Toast.LENGTH_SHORT).show();
     }
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),result -> {
        if (result.getResultCode()==RESULT_OK){
@@ -170,6 +167,7 @@ public class OptionActivity extends BaseActivity<ActivityOptionBinding> {
 
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(this,"option_back_click");
         setResult(RESULT_OK);
         finish();
     }

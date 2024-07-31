@@ -1,5 +1,8 @@
 package com.ghostdetctor.ghost_detector.ui.ghost;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -30,6 +34,7 @@ import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.core.content.ContextCompat;
+import androidx.exifinterface.media.ExifInterface;
 import androidx.lifecycle.LifecycleOwner;
 
 
@@ -39,12 +44,16 @@ import com.ghostdetctor.ghost_detector.database.GhostDAO;
 import com.ghostdetctor.ghost_detector.ui.ghost.collection.CollectionActivity;
 import com.ghostdetctor.ghost_detector.ui.ghost.model.Ghost;
 import com.ghostdetctor.ghost_detector.ui.ghost.story.ScaryStoryActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
+import com.ghostdetctor.ghost_detector.util.SharePrefUtils;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityGhostBinding;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
@@ -67,8 +76,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
     ImageView[] ghostImage = null;
     ImageView[] pointSign = null;
     boolean isGhostAppeared = false;
-    int timeToSee = 30, timeToLeave = 15;
-    int timeShowSignGhost;
+    int timeToSee = 30;
     public static int appearedGhost;
     public static int appearedGhostImage;
     boolean isLightSign = false, isSoundOn = true, isScanGhost = false, isCameraBack = true;
@@ -84,6 +92,9 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
     }
     @Override
     public void initView() {
+        EventTracking.logEvent(this,"scanning_view");
+        int typeGhost = getIntent().getIntExtra("RESTART_SCAN_WITH_GHOST_TYPE",0);
+        if (typeGhost!=0) SPUtils.setInt(this,SPUtils.GHOST_TYPE,typeGhost);
         binding.previewView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -104,6 +115,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
         initData();
         initUI();
         Log.d("isCheckGhost", "isStartGetGhost: " + isStartGetGhost);
+        Log.e("isCheck", "ghostType"+SPUtils.getInt(this,SPUtils.GHOST_TYPE,0));
     }
     @Override
     public void bindView() {
@@ -111,7 +123,10 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             onBackPressed();
         });
         binding.ivCamera.setOnClickListener(view -> {
-            if (!isScanGhost) return;
+            if (!isScanGhost){
+                Toast.makeText(this, getString(R.string.tap_the_radar_to_scan_first), Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (isCameraBack){
                 isCameraBack = false;
                 startCameraFront();
@@ -121,47 +136,57 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             }
         });
         binding.ivSound.setOnClickListener(view -> {
+            if (!isScanGhost){
+                EventTracking.logEvent(this,"scanning_sound_click");
+                Toast.makeText(this, getString(R.string.tap_the_radar_to_scan_first), Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (isSoundOn){
+                EventTracking.logEvent(this,"scanning_sound_click","","OFF");
                 isSoundOn = false;
                 binding.ivSound.setImageResource(R.drawable.img_ghost_sound_off);
-                stopBackgroundSound();
+                stopBackgroundGhostSound();
                 stopGhostAppearSound();
                 SPUtils.setBoolean(this,SPUtils.SOUND_GHOST_SCAN,isSoundOn);
             }
             else {
+                EventTracking.logEvent(this,"scanning_sound_click","","ON");
                 isSoundOn = true;
                 binding.ivSound.setImageResource(R.drawable.img_ghost_sound_on);
                 SPUtils.setBoolean(this,SPUtils.SOUND_GHOST_SCAN,isSoundOn);
                 if (isScanGhost){
-                    playBackgroundSound();
+                    playBackgroundGhostSound();
                     playGhostAppearSound();
                 }
             }
         });
         binding.layoutRadarScan.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"scanning_scan_click");
             if (!isScanGhost){
                 isScanGhost = true;
+                binding.amClick.setVisibility(View.GONE);
                 startCameraBack();
                 binding.tvGhostScan.setVisibility(View.GONE);
                 binding.ivStartScanGhost.setVisibility(View.GONE);
                 binding.imgRadarScan.setVisibility(View.VISIBLE);
                 startSecondHandAnimation();
                 getGhost();
-                if (isSoundOn) playBackgroundSound();
+                if (isSoundOn) playBackgroundGhostSound();
             }
         });
         binding.clGhostType.setOnClickListener(view -> {
-            startNextActivity(OptionActivity.class,null);
-            SPUtils.setBoolean(this,SPUtils.OPTION_ON_GHOST_SCAN, true);
+            EventTracking.logEvent(this,"scanning_type_click");
+            startNextActivity(TypeGhostActivity.class,null);
         });
         binding.clCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //EventTracking.logEvent(GhostActivity.this, "ghost_camera_click");
+                EventTracking.logEvent(GhostActivity.this, "scanning_collection_click");
                 resultLauncher.launch(new Intent(GhostActivity.this, CollectionActivity.class));
             }
         });
         binding.clScaryStory.setOnClickListener(view -> {
+            EventTracking.logEvent(GhostActivity.this, "scanning_stories_click");
             resultLauncher.launch(new Intent(GhostActivity.this, ScaryStoryActivity.class));
         });
     }
@@ -178,6 +203,17 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
 
 
     private void initUI() {
+        SharePrefUtils.increaseCountOpenGhost(this);
+        if (SharePrefUtils.getCountOpenGhost(this)==1){
+            binding.tvGhostScan.setVisibility(View.VISIBLE);
+            animateTextView(binding.tvGhostScan);
+            binding.amClick.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.tvGhostScan.setVisibility(View.GONE);
+            binding.amClick.setVisibility(View.GONE);
+        }
+        animateTextView(binding.tvLoading);
         binding.header.tvTitle.setText(R.string.horror_ghost);
         if (isSoundOn){
             binding.ivSound.setImageResource(R.drawable.img_ghost_sound_on);
@@ -232,6 +268,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             }
         }, ContextCompat.getMainExecutor(this));
     }
+
     private void bindPreViewToCaptureImage() {
         cameraProvider.unbindAll();
         imageCapture = new ImageCapture.Builder().setTargetResolution(new Size(width,height)).build();
@@ -248,6 +285,8 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
     }
     private void getGhost() {
         randomToSeeGhost();
+        Random random = new Random();
+        appearedGhostImage = random.nextInt(7);
         ghostAppearRunable = new Runnable() {
             @Override
             public void run() {
@@ -255,6 +294,10 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
                     timeToSee--;
                     if (timeToSee > 0) {
                         ghostHandler.postDelayed(this, 1000);
+                        if (timeToSee==2) {
+                            isGhostAppeared = true;
+                            pointSign[appearedGhostImage].setVisibility(View.VISIBLE);
+                        }
                     } else {
                         ghostHandler.removeCallbacks(this);
                         ghostAppear();
@@ -266,47 +309,24 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             }
         };
         ghostHandler.postDelayed(ghostAppearRunable, 1000);
+
     }
     private void ghostAppear() {
-        isGhostAppeared = true;
         Log.d("isCheckGhost", "isGhostAppeared: " + isGhostAppeared);
         Random random = new Random();
-        boolean isSoonToLeave = random.nextBoolean();
-        int timeRandomLeave = random.nextInt(5);
-        timeToLeave = 10;
-        if (isSoonToLeave) timeToLeave -= timeRandomLeave;
-        else timeToLeave += timeRandomLeave;
         ghostType = SPUtils.getInt(this,SPUtils.GHOST_TYPE,TYPE_SCARY_SPIRITS);
         if (ghostType != TYPE_SCARY_SPIRITS){
             appearedGhost = 1 + random.nextInt(10);
         } else {
             appearedGhost = 11 +  random.nextInt(10);
         }
-        Log.d("isCheckGhost", "appearedGhost: " + appearedGhost + " " + timeToLeave);
+        Log.d("isCheckGhost", "appearedGhost: " + appearedGhost + " ");
         //appearedGhost = random.nextInt(10);
-        appearedGhostImage = random.nextInt(7);
         if (isSoundOn) playGhostAppearSound();
+        ghostImage[appearedGhostImage].setImageResource(ghost[appearedGhost]);
+        ghostImage[appearedGhostImage].setVisibility(View.VISIBLE);
+
         capturePictureGhost();
-        ghostLeaveRunnable = new Runnable() {
-            @Override
-            public void run() {
-                ghostImage[appearedGhostImage].setImageResource(ghost[appearedGhost]);
-                ghostImage[appearedGhostImage].setVisibility(View.VISIBLE);
-                pointSign[appearedGhostImage].setVisibility(View.VISIBLE);
-                timeToLeave--;
-                if (timeToLeave > 0) {
-                    Log.d("isCheckGhost", "isStartGetGhost: " + isStartGetGhost + " " + timeToLeave);
-                    ghostHandler.postDelayed(this, 1000);
-                } else {
-                    isGhostAppeared = false;
-                    Log.d("isCheckGhost", "isGhostAppeared: " + isGhostAppeared);
-                    ghostHandler.removeCallbacks(this);
-                    stopGhostAppearSound();
-                    getGhost();
-                }
-            }
-        };
-        ghostHandler.post(ghostLeaveRunnable);
 
     }
 
@@ -322,54 +342,95 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             return;
         }
         if (imageCapture != null) {
-            File cachePath = new File(getExternalCacheDir(), "images");
-            cachePath.mkdirs(); // tạo thư mục nếu chưa tồn tại
-            File photoFile = new File(cachePath, "IMG_" + appearedGhost + ".jpg");
-            ImageCapture.OutputFileOptions outputFileOptions =
-                    new ImageCapture.OutputFileOptions.Builder(photoFile).build();
+            File cachePath = getExternalCacheDir();
+            if (cachePath != null) {
+                File imageDir = new File(cachePath, "images");
+                if (!imageDir.exists()) {
+                    imageDir.mkdirs(); // Tạo thư mục nếu chưa tồn tại
+                }
+                File photoFile = new File(imageDir, "IMG_" + appearedGhost + ".jpg");
+                ImageCapture.OutputFileOptions outputFileOptions =
+                        new ImageCapture.OutputFileOptions.Builder(photoFile).build();
 
-            imageCapture.takePicture(outputFileOptions,
-                    ContextCompat.getMainExecutor(this),
-                    new ImageCapture.OnImageSavedCallback() {
-                        @Override
-                        public void onImageSaved(@NonNull ImageCapture.OutputFileResults outputFileResults) {;
-                            capturedGhost = getImageLayout(binding.layoutGetImage);
-                            Ghost ghost2 = AppDatabase.getInstance(GhostActivity.this).ghostDAO().findByIds(appearedGhost);
-                            ghost2.setImagePath(photoFile.getAbsolutePath());
-                            AppDatabase.getInstance(GhostActivity.this).ghostDAO().update(ghost2);
-                            dismissLoadingDialog();
-                            resultLauncher.launch(new Intent(GhostActivity.this, ImageCaptureActivity.class));
-                        }
+                imageCapture.takePicture(outputFileOptions,
+                        ContextCompat.getMainExecutor(this),
+                        new ImageCapture.OnImageSavedCallback() {
+                            @Override
+                            public void onImageSaved(@NonNull ImageCapture.OutputFileResults outputFileResults) {
+                                try {
+                                    ExifInterface exif = new ExifInterface(photoFile.getAbsolutePath());
+                                    int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+                                    int rotationInDegrees = exifToDegrees(rotation);
+                                    if (rotationInDegrees != 0) {
+                                        Bitmap bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+                                        bitmap = rotateBitmap(bitmap, rotationInDegrees);
+                                        FileOutputStream out = new FileOutputStream(photoFile);
+                                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                                        out.close();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                capturedGhost = getImageLayout(binding.layoutGetImage);
+                                Ghost ghost2 = AppDatabase.getInstance(GhostActivity.this).ghostDAO().findByIds(appearedGhost);
+                                if (ghost2 != null) {
+                                    ghost2.setImagePath(photoFile.getAbsolutePath());
+                                    AppDatabase.getInstance(GhostActivity.this).ghostDAO().update(ghost2);
+                                } else {
+                                    Log.e("GhostActivity", "Ghost not found in database for ID: " + appearedGhost);
+                                }
+                                resultLauncher.launch(new Intent(GhostActivity.this, ImageCaptureActivity.class));
+                            }
 
-                        @Override
-                        public void onError(@NonNull ImageCaptureException exception) {
-                            dismissLoadingDialog();
-                            Toast.makeText(GhostActivity.this, getString(R.string.capture_image_failed), Toast.LENGTH_LONG).show();
-                        }
-                    });
+                            @Override
+                            public void onError(@NonNull ImageCaptureException exception) {
+                                dismissLoadingDialog();
+                                Log.e("GhostActivity", "Image capture failed", exception);
+                                Toast.makeText(GhostActivity.this, getString(R.string.capture_image_failed), Toast.LENGTH_LONG).show();
+                            }
+                        });
+            } else {
+                Log.e("GhostActivity", "External cache directory is null");
+                Toast.makeText(GhostActivity.this, getString(R.string.external_directory_is_not_available), Toast.LENGTH_SHORT).show();
+                dismissLoadingDialog();
+            }
         }
+    }
+    private int exifToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
+            return 90;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
+            return 180;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
+            return 270;
+        }
+        return 0;
+    }
+
+    private void showLoadingDialog() {
+        binding.clLoading.setVisibility(View.VISIBLE);
     }
 
     private void checkToBackGhostActivity() {
-        if (isGhostAppeared) {
-            if (isSoundOn) playGhostAppearSound();
-            isStartGetGhost = false;
-            new Handler().postDelayed(() -> {
-                isStartGetGhost = true;
-            }, timeToLeave);
-        } else {
-            isStartGetGhost = true;
-        }
-        if (isSoundOn && isScanGhost) playBackgroundSound();
+        isStartGetGhost = true;
+        if (isSoundOn && isScanGhost) playBackgroundGhostSound();
         Log.d("isCheckGhost", "isStartGetGhost: " + isStartGetGhost);
     }
     public ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == RESULT_OK) {
             isActivityGhost = true;
+            isGhostAppeared = false;
+            Log.d("isCheckGhost", "isGhostAppeared: " + isGhostAppeared);
+            stopGhostAppearSound();
+            getGhost();
+            dismissLoadingDialog();
             Log.d("isCheckGhost", "isActivityGhost: " + isActivityGhost);
             checkToBackGhostActivity();
         }
     });
+    private void dismissLoadingDialog(){
+        binding.clLoading.setVisibility(View.GONE);
+    }
 
     @Override
     protected void onDestroy() {
@@ -379,7 +440,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
         Log.d("isCheckGhost", "onDestroy: ");
         ghostHandler.removeCallbacks(ghostAppearRunable);
         ghostHandler.removeCallbacks(ghostLeaveRunnable);
-        stopBackgroundSound();
+        stopBackgroundGhostSound();
         stopGhostAppearSound();
         if (cameraProvider != null) {
             cameraProvider.unbindAll();
@@ -392,7 +453,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
         isStartGetGhost = false;
         Log.d("isCheckGhost", "isStartGetGhost: " + isStartGetGhost);
         Log.d("isCheckGhost", "onStop: ");
-        stopBackgroundSound();
+        stopBackgroundGhostSound();
         stopGhostAppearSound();
     }
     @Override
@@ -401,7 +462,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
         isStartGetGhost = false;
         Log.d("isCheckGhost", "isStartGetGhost: " + isStartGetGhost);
         Log.d("isCheckGhost", "onPause: ");
-        stopBackgroundSound();
+        stopBackgroundGhostSound();
         stopGhostAppearSound();
     }
     @Override
@@ -412,8 +473,8 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
     }
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(this,"scanning_back_click");
         setResult(RESULT_OK);
-        //EventTracking.logEvent(this, "ghost_back_click");
         finish();
     }
 
@@ -488,6 +549,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
         handler1.postDelayed(runnable, 250);
     }
 
+
     private void startSecondHandAnimation() {
         handler.postDelayed(new Runnable() {
             @Override
@@ -508,7 +570,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             }
         }, 100);
     }
-    private void playBackgroundSound() {
+    private void playBackgroundGhostSound() {
         if (mediaPlayerBackground != null) {
             mediaPlayerBackground.release();
         }
@@ -547,7 +609,7 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             mediaPlayerGhost = null;
         }
     }
-    private void stopBackgroundSound() {
+    private void stopBackgroundGhostSound() {
         if (mediaPlayerBackground != null) {
             mediaPlayerBackground.release();
             mediaPlayerBackground = null;
@@ -569,12 +631,12 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
                 R.drawable.img_evp_10, R.drawable.img_evp_11
         };
         ghost = new int[]{
-                R.drawable.img_ghost_11, R.drawable.img_ghost_22, R.drawable.img_ghost_33,
-                R.drawable.img_ghost_44, R.drawable.img_ghost_55,
-                R.drawable.img_ghost_1, R.drawable.img_ghost_2, R.drawable.img_ghost_3, R.drawable.img_ghost_4, R.drawable.img_ghost_5,
-                R.drawable.img_ghost_11, R.drawable.img_ghost_22, R.drawable.img_ghost_33,
-                R.drawable.img_ghost_44, R.drawable.img_ghost_55,
-                R.drawable.img_ghost_1, R.drawable.img_ghost_2, R.drawable.img_ghost_3, R.drawable.img_ghost_4, R.drawable.img_ghost_5, R.drawable.img_ghost_5
+                R.drawable.img_ghost_1, R.drawable.img_ghost_1, R.drawable.img_ghost_2,
+                R.drawable.img_ghost_3, R.drawable.img_ghost_4,
+                R.drawable.img_ghost_5, R.drawable.img_ghost_6, R.drawable.img_ghost_7, R.drawable.img_ghost_8, R.drawable.img_ghost_9,
+                R.drawable.img_ghost_10, R.drawable.img_ghost_11, R.drawable.img_ghost_12,
+                R.drawable.img_ghost_13, R.drawable.img_ghost_14,
+                R.drawable.img_ghost_15, R.drawable.img_ghost_16, R.drawable.img_ghost_17, R.drawable.img_ghost_18, R.drawable.img_ghost_19, R.drawable.img_ghost_20
         };
         ghostImage = new ImageView[]{
                 binding.imgGhost11, binding.imgGhost22, binding.imgGhost33,
@@ -632,7 +694,6 @@ public class GhostActivity extends BaseActivity<ActivityGhostBinding> {
             return;
         }
         showLoadingDialog();
-        timeToLeave += 2;
         try{
             imageCapture.takePicture(ContextCompat.getMainExecutor(GhostActivity.this),
                     new ImageCapture.OnImageCapturedCallback() {

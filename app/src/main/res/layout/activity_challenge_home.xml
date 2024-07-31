@@ -57,24 +57,34 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/img_charlie_challenge"
         android:layout_marginTop="80dp"/>
-    <ImageView
-        android:id="@+id/ivStartChallenge"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="240dp"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="80dp"
-        android:src="@drawable/img_challenge_border_start"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/ivStartChallenge"
-        app:layout_constraintEnd_toEndOf="@id/ivStartChallenge"
-        app:layout_constraintTop_toTopOf="@id/ivStartChallenge"
-        app:layout_constraintBottom_toBottomOf="@id/ivStartChallenge"
-        android:fontFamily="@font/bowlby_one_sc"
-        android:textSize="32sp"
-        android:textColor="@color/white"
-        android:text="@string/start"/>
+        android:layout_marginBottom="80dp">
+        <ImageView
+            android:id="@+id/ivStartChallenge"
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/img_challenge_border_start"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/ivStartChallenge"
+            app:layout_constraintEnd_toEndOf="@id/ivStartChallenge"
+            app:layout_constraintTop_toTopOf="@id/ivStartChallenge"
+            app:layout_constraintBottom_toBottomOf="@id/ivStartChallenge"
+            android:fontFamily="@font/bowlby_one_sc"
+            android:textSize="32sp"
+            android:lineSpacingExtra="-20dp"
+            android:textColor="@color/white"
+            android:text="@string/start"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.graphics.Typeface;
 
 import com.ghostdetctor.ghost_detector.base.BaseActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityScaryStoryBinding;
 
@@ -24,6 +25,7 @@ public class ScaryStoryActivity extends BaseActivity<ActivityScaryStoryBinding> 
 
     @Override
     public void bindView() {
+        EventTracking.logEvent(ScaryStoryActivity.this, "scary_stories_view");
         binding.header.tvTitle.setText(R.string.scary_stories);
         binding.header.ivBack.setOnClickListener(view -> onBackPressed());
         binding.tvHauntedStoryteller.setOnClickListener(view -> {
@@ -42,6 +44,7 @@ public class ScaryStoryActivity extends BaseActivity<ActivityScaryStoryBinding> 
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 if (position==0){
+                    EventTracking.logEvent(ScaryStoryActivity.this, "scary_stories_haunted_click");
                     binding.tvHauntedStoryteller.setBackgroundResource(R.drawable.img_border_select);
                     binding.tvHauntedStoryteller.setTextColor(getResources().getColor(R.color.text_select));
                     binding.tvHorrorStoriesWorldwide.setBackgroundResource(R.drawable.img_border_unselect);
@@ -50,6 +53,7 @@ public class ScaryStoryActivity extends BaseActivity<ActivityScaryStoryBinding> 
                     binding.tvHauntedStoryteller.setTypeface(null,Typeface.BOLD);
                 }
                 else {
+                    EventTracking.logEvent(ScaryStoryActivity.this, "scary_stories_horror_stories_click");
                     binding.tvHauntedStoryteller.setBackgroundResource(R.drawable.img_border_unselect);
                     binding.tvHauntedStoryteller.setTextColor(getResources().getColor(R.color.text_unselect));
                     binding.tvHorrorStoriesWorldwide.setBackgroundResource(R.drawable.img_border_select);
@@ -67,6 +71,7 @@ public class ScaryStoryActivity extends BaseActivity<ActivityScaryStoryBinding> 
     }
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(ScaryStoryActivity.this, "stories_back_click");
         setResult(RESULT_OK);
         finish();
     }

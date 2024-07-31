@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:rotation="180"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background_challenge"
+    tools:context="com.ghostdetctor.ghost_detector.ui.challenge.ChallengeLanscapeActivity">
+
+    <ImageView
+        android:id="@+id/ivBackChallenge"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="40dp"
+        android:rotation="270"
+        android:src="@drawable/img_challenge_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="200dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="252:360"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img_challenge_story_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="252:36"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="20:360"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_vector_landscape_2"
+                    app:layout_constraintDimensionRatio="232:278"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view6"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="36:360"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_vector_portrait_2"
+                    app:layout_constraintBottom_toBottomOf="@id/image1"
+                    app:layout_constraintDimensionRatio="198:278"
+                    app:layout_constraintStart_toEndOf="@id/view1"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="18dp"
+                    android:fontFamily="@font/ghochi_hand"
+                    android:rotation="270"
+                    android:text="@string/no"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toTopOf="@id/ivPencilPortrait"
+                    app:layout_constraintEnd_toStartOf="@id/ivPencilLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="18dp"
+                    android:rotation="270"
+                    android:fontFamily="@font/ghochi_hand"
+                    android:text="@string/no"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintStart_toEndOf="@id/ivPencilLandscape"
+                    app:layout_constraintTop_toBottomOf="@id/ivPencilPortrait" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginBottom="18dp"
+                    android:fontFamily="@font/ghochi_hand"
+                    android:rotation="270"
+                    android:text="@string/yes"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toTopOf="@id/ivPencilPortrait"
+                    app:layout_constraintStart_toEndOf="@id/ivPencilLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="-1dp"
+                    android:rotation="270"
+                    android:fontFamily="@font/ghochi_hand"
+                    android:text="@string/yes"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivPencilLandscape"
+                    app:layout_constraintTop_toBottomOf="@id/ivPencilPortrait" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="252:82"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivPencilLandscape"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_pencil_landscape_2"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@id/view5"
+                    app:layout_constraintDimensionRatio="29:187"
+                    app:layout_constraintEnd_toEndOf="@id/image1"
+                    app:layout_constraintStart_toStartOf="@id/image1"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="252:91"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="42:360"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivPencilPortrait"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/img_pencil_portrai_2"
+                    app:layout_constraintBottom_toBottomOf="@id/image1"
+                    app:layout_constraintDimensionRatio="187:29"
+                    app:layout_constraintEnd_toStartOf="@+id/view2"
+                    app:layout_constraintStart_toEndOf="@+id/view3"
+                    app:layout_constraintTop_toTopOf="@id/image1" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="23:360"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTalk"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:rotation="270"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivTalk"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_challenge_talk"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/bowlby_one_sc"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/talk"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@id/ivTalk"
+                app:layout_constraintStart_toStartOf="@id/ivTalk"
+                app:layout_constraintTop_toTopOf="@id/ivTalk" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStop"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:rotation="270"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivStop"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img_challenge_stop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/bowlby_one_sc"
+                android:gravity="center"
+                android:lineSpacingExtra="-15sp"
+                android:maxLines="3"
+                android:text="@string/stop_and_ask"
+                android:textColor="@color/gray"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivStop"
+                app:layout_constraintEnd_toEndOf="@id/ivStop"
+                app:layout_constraintStart_toStartOf="@id/ivStop"
+                app:layout_constraintTop_toTopOf="@id/ivStop" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="204dp"
+            android:rotation="270"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/ivReset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_challenge_restt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/bowlby_one_sc"
+                android:gravity="center"
+                android:lineSpacingExtra="-10sp"
+                android:maxLines="2"
+                android:text="Reset"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivReset"
+                app:layout_constraintEnd_toEndOf="@id/ivReset"
+                app:layout_constraintStart_toStartOf="@id/ivReset"
+                app:layout_constraintTop_toTopOf="@id/ivReset" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivSoundChallenge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:rotation="270"
+            android:src="@drawable/img_challenge_sound_on" />
+
+        <ImageView
+            android:id="@+id/ivScreenChallenge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:rotation="270"
+            android:src="@drawable/img_challenge_portrait"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivStoryChallenge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:rotation="270"
+            android:src="@drawable/img_challenge_story"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

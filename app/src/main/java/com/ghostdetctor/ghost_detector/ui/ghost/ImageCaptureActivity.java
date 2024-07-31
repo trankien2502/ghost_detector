@@ -19,6 +19,7 @@ import com.ghostdetctor.ghost_detector.base.BaseActivity;
 import com.ghostdetctor.ghost_detector.database.AppDatabase;
 import com.ghostdetctor.ghost_detector.ui.ghost.collection.GhostDetailActivity;
 import com.ghostdetctor.ghost_detector.ui.ghost.model.Ghost;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityImageCaptureBinding;
 
@@ -39,6 +40,7 @@ public class ImageCaptureActivity extends BaseActivity<ActivityImageCaptureBindi
 
     @Override
     public void initView() {
+        EventTracking.logEvent(this, "result_view");
         binding.header.tvTitle.setText(R.string.result);
         showImage();
         binding.imgGhostFilter.setImageBitmap(GhostActivity.capturedGhost);
@@ -64,6 +66,7 @@ public class ImageCaptureActivity extends BaseActivity<ActivityImageCaptureBindi
         binding.clCaptureShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EventTracking.logEvent(ImageCaptureActivity.this, "detail_share_click");
                 try {
                     shareImage(FileProvider.getUriForFile(ImageCaptureActivity.this, AUTHORITY, photoFile));
                 } catch (Exception e) {
@@ -73,8 +76,10 @@ public class ImageCaptureActivity extends BaseActivity<ActivityImageCaptureBindi
             }
         });
         binding.clCaptureDetail.setOnClickListener(view -> {
+            EventTracking.logEvent(ImageCaptureActivity.this, "result_detail_click");
             Intent intent = new Intent(ImageCaptureActivity.this, GhostDetailActivity.class);
             intent.putExtra("GHOST_ID",GhostActivity.appearedGhost);
+            //intent.putExtra("RESTART_SCAN_WITH_GHOST_TYPE",true);
             resultLauncher.launch(intent);
         });
     }
@@ -94,10 +99,10 @@ public class ImageCaptureActivity extends BaseActivity<ActivityImageCaptureBindi
             fOut.flush();
             fOut.close();
             Ghost ghost = AppDatabase.getInstance(this).ghostDAO().findByIds(GhostActivity.appearedGhost);
+            ghost.setCaptured(true);
             ghost.setImagePath(photoFile.getAbsolutePath());
             AppDatabase.getInstance(this).ghostDAO().update(ghost);
-            //Ghost ghost1 = AppDatabase.getInstance(this).ghostDAO().findByIds(GhostActivity.appearedGhost);
-            //Toast.makeText(ImageCaptureActivity.this, "Ảnh đã được lưu vào bộ nhớ: " + ghost1.getImagePath(), Toast.LENGTH_LONG).show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -115,7 +120,7 @@ public class ImageCaptureActivity extends BaseActivity<ActivityImageCaptureBindi
     @Override
     public void onBackPressed() {
         setResult(RESULT_OK);
-        //EventTracking.logEvent(ImageCaptureActivity.this, "ghost_result_back_click");
+        EventTracking.logEvent(ImageCaptureActivity.this, "detail_back_click");
         finish();
     }
 

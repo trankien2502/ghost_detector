@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.ghostdetctor.ghost_detector.base.BaseFragment;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetector.ghost_detector.databinding.FragmentHauntedStorytellerBinding;
 
@@ -33,6 +34,7 @@ public class HauntedStorytellerFragment extends BaseFragment<FragmentHauntedStor
     }
 
     private void startToStoryActivity(int i) {
+        EventTracking.logEvent(requireContext(), "scary_stories_see_more_click");
         Bundle bundle = new Bundle();
         bundle.putInt(SPUtils.SCARY_STORIES,i);
         Intent intent = new Intent(getActivity(),StoryActivity.class);

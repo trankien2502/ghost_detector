@@ -46,8 +46,7 @@ public class GhostAdapter extends RecyclerView.Adapter<GhostAdapter.GhostViewHol
         Ghost ghost = ghostList.get(position);
         if (ghost==null) return;
         holder.itemGhostBinding.tvGhostName.setText(ghost.getName());
-        Bitmap bitmap = BitmapFactory.decodeFile(ghost.getImagePath());
-        holder.itemGhostBinding.ivGhost.setImageBitmap(bitmap);
+        holder.itemGhostBinding.imgGhostCollection.setImageResource(ghost.getGhostItemImage());
         holder.itemGhostBinding.clGhost.setOnClickListener(view -> iOnClickGhostItemListener.onClickGhostItemListener(ghost));
     }
 

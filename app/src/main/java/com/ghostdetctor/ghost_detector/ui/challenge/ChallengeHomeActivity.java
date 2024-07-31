@@ -22,6 +22,7 @@ import com.ghostdetctor.ghost_detector.dialog.micro_access.IClickDialogMicroAcce
 import com.ghostdetctor.ghost_detector.dialog.micro_access.MicroAccessDialog;
 import com.ghostdetctor.ghost_detector.ui.challenge.service.SoundService;
 import com.ghostdetctor.ghost_detector.ui.ghost.OptionActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityChallengeHomeBinding;
@@ -29,9 +30,7 @@ import com.ghostdetector.ghost_detector.databinding.ActivityChallengeHomeBinding
 public class ChallengeHomeActivity extends BaseActivity<ActivityChallengeHomeBinding> {
 
     private boolean isSoundOn;
-    MediaPlayer mediaPlayerBackground;
-    Handler handler = new Handler();
-    boolean soundCheck = true;
+    public static boolean isChallengeHome;
     private final int REQUEST_CODE_AUDIO_PERMISSION = 129;
     private int countAudio = 0;
     @Override
@@ -41,35 +40,24 @@ public class ChallengeHomeActivity extends BaseActivity<ActivityChallengeHomeBin
 
     @Override
     public void initView() {
-        Log.e("challengeCheck","on create");
+        EventTracking.logEvent(this,"challenge_start_view");
+        isChallengeHome = true;
+        Log.e("challengeCheck","on create home");
         isSoundOn = SPUtils.getBoolean(this,SPUtils.SOUND_CHALLENGE,true);
-        Log.e("challengeCheck","isSoundOn "+isSoundOn);
-        if (!isSoundOn) {
+        if (isSoundOn){
+            binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
+            playBackgroundSound();
+        } else {
             binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_off);
             stopBackgroundSound();
-        } else {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    soundCheck = SPUtils.getBoolean(ChallengeHomeActivity.this, SPUtils.SOUND_CHECK, true);
-                    if (!soundCheck) {
-                        handler.postDelayed(this, 100);
-                    } else {
-                        binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
-                        playBackgroundSound();
-                        handler.removeCallbacks(this);
-                        SPUtils.setBoolean(ChallengeHomeActivity.this, SPUtils.SOUND_CHECK, false);
-                    }
-                }
-            });
         }
-
     }
 
     @Override
     public void bindView() {
         binding.ivBackChallenge.setOnClickListener(view -> onBackPressed());
         binding.ivStoryChallenge.setOnClickListener(view -> {
+            EventTracking.logEvent(this,"challenge_start_click");
             resultLauncher.launch(new Intent(ChallengeHomeActivity.this, ChallengeStoryActivity.class));
         });
         binding.ivSoundChallenge.setOnClickListener(view -> {
@@ -88,13 +76,14 @@ public class ChallengeHomeActivity extends BaseActivity<ActivityChallengeHomeBin
         binding.ivStartChallenge.setOnClickListener(view -> {
             if (checkMicroPermission()){
                 resultLauncher.launch(new Intent(ChallengeHomeActivity.this, ChallengePortraitActivity.class));
-                finish();
+                //finish();
             }
             else accessMicro();
         });
     }
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(this,"challenge_start_back_click");
         setResult(RESULT_OK);
         finish();
     }
@@ -157,38 +146,21 @@ public class ChallengeHomeActivity extends BaseActivity<ActivityChallengeHomeBin
             Log.e("activityCheck", "homeChallenge");
         }
     });
-//private void stopBackgroundSound() {
-//    if (mediaPlayerBackground != null) {
-//        mediaPlayerBackground.release();
-//        mediaPlayerBackground = null;
-//    }
-//}
-//    private void playBackgroundSound() {
-//        if (mediaPlayerBackground != null) {
-//            mediaPlayerBackground.release();
-//        }
-//        mediaPlayerBackground = MediaPlayer.create(this, R.raw.background_sound);
-//        mediaPlayerBackground.start();
-//        mediaPlayerBackground.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mediaPlayer) {
-//                mediaPlayer.seekTo(0);
-//                mediaPlayer.start();
-//            }
-//        });
-//    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("challengeCheck","on destroy");
-        stopBackgroundSound();
-        SPUtils.setBoolean(this, SPUtils.SOUND_CHECK, true);
+        isChallengeHome = false;
+        Log.e("challengeCheck","on destroy home");
+        destroyService();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("challengeCheck","on resume");
+        isChallengeHome = true;
+        isSoundOn =  SPUtils.getBoolean(this,SPUtils.SOUND_CHALLENGE,true);
+        Log.e("challengeCheck","on resume home + issound "+isSoundOn);
         if (isSoundOn){
             binding.ivSoundChallenge.setImageResource(R.drawable.img_challenge_sound_on);
             playBackgroundSound();
@@ -201,7 +173,9 @@ public class ChallengeHomeActivity extends BaseActivity<ActivityChallengeHomeBin
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e("challengeCheck","on stop");
-        stopBackgroundSound();
+        isChallengeHome = false;
+        Log.e("challengeCheck","stop home challengeExxist" + checkChallengeExist());
+        if (!checkChallengeExist()&&isSoundOn)
+            stopBackgroundSound();
     }
 }

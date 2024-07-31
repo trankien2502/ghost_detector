@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 import android.util.Log;
 
 import com.ghostdetctor.ghost_detector.base.BaseActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityCollectionBinding;
 
@@ -22,6 +23,7 @@ public class CollectionActivity extends BaseActivity<ActivityCollectionBinding> 
 
     @Override
     public void initView() {
+        EventTracking.logEvent(this,"collection_view");
         CollectionAdapter collectionAdapter = new CollectionAdapter(this);
         binding.frameContentPager.setAdapter(collectionAdapter);
         binding.frameContentPager.setCurrentItem(0);
@@ -47,6 +49,7 @@ public class CollectionActivity extends BaseActivity<ActivityCollectionBinding> 
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 if (position==0){
+                    EventTracking.logEvent(CollectionActivity.this,"collection_horror_ghosts_click");
                     binding.tvHorrorGhosts.setBackgroundResource(R.drawable.img_border_select);
                     binding.tvHorrorGhosts.setTextColor(getResources().getColor(R.color.text_select));
                     binding.tvScarySpirits.setBackgroundResource(R.drawable.img_border_unselect);
@@ -55,6 +58,7 @@ public class CollectionActivity extends BaseActivity<ActivityCollectionBinding> 
                     binding.tvHorrorGhosts.setTypeface(null,Typeface.BOLD);
                 }
                 else {
+                    EventTracking.logEvent(CollectionActivity.this,"collection_scary_spirits_click");
                     binding.tvHorrorGhosts.setBackgroundResource(R.drawable.img_border_unselect);
                     binding.tvHorrorGhosts.setTextColor(getResources().getColor(R.color.text_unselect));
                     binding.tvScarySpirits.setBackgroundResource(R.drawable.img_border_select);
@@ -79,6 +83,7 @@ public class CollectionActivity extends BaseActivity<ActivityCollectionBinding> 
 
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(this,"collection_back_click");
         setResult(RESULT_OK);
         finish();
     }

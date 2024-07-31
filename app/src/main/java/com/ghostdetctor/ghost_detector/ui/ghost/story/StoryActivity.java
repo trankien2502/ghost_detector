@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ghostdetctor.ghost_detector.base.BaseActivity;
+import com.ghostdetctor.ghost_detector.util.EventTracking;
 import com.ghostdetctor.ghost_detector.util.SPUtils;
 import com.ghostdetector.ghost_detector.R;
 import com.ghostdetector.ghost_detector.databinding.ActivityStoryBinding;
@@ -19,6 +20,7 @@ public class StoryActivity extends BaseActivity<ActivityStoryBinding> {
 
     @Override
     public void initView() {
+        EventTracking.logEvent(this, "stories_view");
         binding.header.tvTitle.setText(R.string.stories);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -105,6 +107,7 @@ public class StoryActivity extends BaseActivity<ActivityStoryBinding> {
 
     @Override
     public void onBackPressed() {
+        EventTracking.logEvent(this, "stories_back_click");
         finish();
     }
 }

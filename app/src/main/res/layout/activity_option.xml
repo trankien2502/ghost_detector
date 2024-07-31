@@ -264,8 +264,8 @@
             app:layout_constraintEnd_toEndOf="@+id/ivStartSelect1"
             app:layout_constraintTop_toTopOf="@+id/ivStartSelect1"/>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:text="@string/start_scanning"
             android:textColor="@color/white"
             android:textSize="24sp"

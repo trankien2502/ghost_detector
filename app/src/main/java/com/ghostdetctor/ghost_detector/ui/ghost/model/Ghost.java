@@ -16,7 +16,10 @@ public class Ghost implements Serializable {
     private String description;
     private String danger;
     private String die;
+    private int ghostItemImage;
+    private int ghostDetailImage;
     private boolean isHorror;
+    private boolean isCaptured;
     private String imagePath;
 
     public Ghost() {
@@ -30,33 +33,61 @@ public class Ghost implements Serializable {
         this.alias = alias;
     }
 
-    public Ghost(int id, String name, String alias, String description, String danger, String die, boolean isHorror) {
+    public Ghost(int id, String name, String alias, String description, String danger, String die,int ghostItemImage, int ghostDetailImage, boolean isHorror) {
         this.id = id;
         this.name = name;
         this.alias = alias;
         this.description = description;
         this.danger = danger;
         this.die = die;
+        this.ghostItemImage = ghostItemImage;
+        this.ghostDetailImage = ghostDetailImage;
         this.isHorror = isHorror;
     }
 
-    public Ghost(int id, String name, String description, String danger, String die, boolean isHorror, String imagePath) {
+
+
+    public Ghost(int id, String name, String description, String danger, String die,int ghostItemImage, int ghostDetailImage, boolean isHorror) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.danger = danger;
         this.die = die;
+        this.ghostItemImage = ghostItemImage;
+        this.ghostDetailImage = ghostDetailImage;
         this.isHorror = isHorror;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
 
-    public Ghost(int id, String name, String description, String danger, String die, boolean isHorror) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.danger = danger;
-        this.die = die;
-        this.isHorror = isHorror;
+    public int getGhostItemImage() {
+        return ghostItemImage;
+    }
+
+    public void setGhostItemImage(int ghostItemImage) {
+        this.ghostItemImage = ghostItemImage;
+    }
+
+    public int getGhostDetailImage() {
+        return ghostDetailImage;
+    }
+
+    public void setGhostDetailImage(int ghostDetailImage) {
+        this.ghostDetailImage = ghostDetailImage;
+    }
+
+    public boolean isCaptured() {
+        return isCaptured;
+    }
+
+    public void setCaptured(boolean captured) {
+        isCaptured = captured;
     }
 
     public int getId() {
@@ -107,11 +138,4 @@ public class Ghost implements Serializable {
         isHorror = horror;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
 }

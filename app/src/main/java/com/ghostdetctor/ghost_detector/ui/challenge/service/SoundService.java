@@ -19,20 +19,23 @@ public class SoundService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mediaPlayer = MediaPlayer.create(this, R.raw.background_sound); // Replace with your sound file
-        mediaPlayer.setLooping(true); // Loop the sound
+        mediaPlayer = MediaPlayer.create(this, R.raw.challenge_background_sound);
+        mediaPlayer.setLooping(true);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (intent != null) {
             String action = intent.getAction();
-            if (!mediaPlayer.isPlaying()) {
-                lastPosition = SPUtils.getInt(getBaseContext(),SPUtils.SOUND_POSITION,0);
-                mediaPlayer.seekTo(lastPosition);
-                Log.d("challengeCheck","position start: "+ lastPosition);
-                mediaPlayer.start();
-            } else if ("STOP_SOUND".equals(action)) {
+            if ("START_SOUND".equals(action)) {
+                if (!mediaPlayer.isPlaying()) {
+                    lastPosition = SPUtils.getInt(getBaseContext(), SPUtils.SOUND_POSITION, 0);
+                    mediaPlayer.seekTo(lastPosition);
+                    Log.d("challengeCheck", "position start: " + lastPosition);
+                    mediaPlayer.start();
+                }
+            }
+            else if ("STOP_SOUND".equals(action)) {
                 if (mediaPlayer.isPlaying()) {
                     SPUtils.setInt(getBaseContext(),SPUtils.SOUND_POSITION,mediaPlayer.getCurrentPosition());
                     Log.d("challengeCheck","position end: "+ mediaPlayer.getCurrentPosition());

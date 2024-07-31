@@ -30,6 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
@@ -57,39 +58,40 @@
 
                 <ImageView
                     android:id="@+id/img_ghost_4"
-                    android:layout_width="235dp"
-                    android:layout_height="420dp"
+                    android:layout_width="400dp"
+                    android:layout_height="400dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="0dp"
-                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/img_ghost_5"
                     android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_ghost_5"
-                    android:layout_width="180dp"
-                    android:layout_height="320dp"
-                    android:layout_gravity="top|center_horizontal"
+                    android:layout_width="400dp"
+                    android:layout_height="500dp"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="150dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_ghost_4"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_ghost_5"
                     android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_ghost_11"
-                    android:layout_width="250dp"
-                    android:layout_height="450dp"
+                    android:layout_width="300dp"
+                    android:layout_height="350dp"
                     android:layout_gravity="bottom|end"
                     android:layout_marginStart="0dp"
-                    android:layout_marginEnd="-60dp"
-                    android:layout_marginBottom="-10dp"
-                    android:src="@drawable/img_ghost_1"
+                    android:adjustViewBounds="true"
+                    android:layout_marginEnd="-30dp"
+                    android:layout_marginBottom="-20dp"
+                    android:src="@drawable/img_ghost_20"
                     android:visibility="gone" />
 
                 <ImageView
@@ -98,48 +100,50 @@
                     android:layout_height="300dp"
                     android:layout_gravity="center|top"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="0dp"
-                    android:src="@drawable/img_ghost_55"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_ghost_1"
                     android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_ghost_33"
-                    android:layout_width="200dp"
+                    android:layout_width="300dp"
                     android:layout_height="300dp"
                     android:layout_gravity="top|end"
                     android:layout_marginStart="0dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="-50dp"
                     android:layout_marginBottom="0dp"
-                    android:src="@drawable/img_ghost_55"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_ghost_20"
                     android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_ghost_44"
-                    android:layout_width="200dp"
-                    android:layout_height="350dp"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
                     android:layout_gravity="top|start"
-                    android:layout_marginStart="-50dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginStart="-30dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="0dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/img_ghost_55"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_ghost_20"
                     android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/img_ghost_55"
-                    android:layout_width="250dp"
-                    android:layout_height="500dp"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
                     android:layout_gravity="bottom|start"
-                    android:layout_marginStart="-50dp"
+                    android:layout_marginStart="-80dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="-50dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/img_ghost_5"
+                    android:layout_marginBottom="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_ghost_20"
                     android:visibility="gone" />
                 <ImageView
                     android:layout_width="match_parent"
@@ -172,15 +176,20 @@
 
                     <TextView
                         android:id="@+id/tv_evp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         android:layout_centerHorizontal="true"
                         android:layout_gravity="center"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:layout_marginEnd="16dp"
                         android:fontFamily="@font/svn_gilroy"
+                        android:maxLines="2"
                         android:text="@string/evp_levels"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layout_evp_level"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -664,6 +673,18 @@
                     </FrameLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/amClick"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:rotation="320"
+                    app:layout_constraintStart_toStartOf="@+id/layout_radar_scan"
+                    app:layout_constraintTop_toTopOf="@+id/layout_radar_scan"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/hand_tounch" />
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
@@ -697,7 +718,8 @@
                         <TextView
                             android:id="@+id/tvGhostType"
                             android:layout_width="match_parent"
-                            android:maxLines="1"
+                            android:maxLines="2"
+                            android:lines="2"
                             android:ellipsize="end"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="@id/vGhostType"
@@ -706,8 +728,7 @@
                             app:layout_constraintTop_toBottomOf="@id/icGhostType"
                             android:text="@string/ghost_type"
                             android:fontFamily="@font/svn_gilroy"
-                            android:textSize="16sp"
-                            android:layout_marginBottom="10dp"
+                            android:textSize="14sp"
                             android:textColor="@color/white"
                             android:gravity="center"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -736,7 +757,8 @@
                        <TextView
                            android:id="@+id/tvCollection"
                            android:layout_width="match_parent"
-                           android:maxLines="1"
+                           android:maxLines="2"
+                           android:lines="2"
                            android:ellipsize="end"
                            android:layout_height="wrap_content"
                            app:layout_constraintBottom_toBottomOf="@id/vCollection"
@@ -745,8 +767,7 @@
                            app:layout_constraintTop_toBottomOf="@id/icCollection"
                            android:text="@string/collection"
                            android:fontFamily="@font/svn_gilroy"
-                           android:textSize="16sp"
-                           android:layout_marginBottom="10dp"
+                           android:textSize="14sp"
                            android:textColor="@color/white"
                            android:gravity="center"/>
                    </androidx.constraintlayout.widget.ConstraintLayout>
@@ -775,7 +796,8 @@
                         <TextView
                             android:id="@+id/tvScaryStory"
                             android:layout_width="match_parent"
-                            android:maxLines="1"
+                            android:maxLines="2"
+                            android:lines="2"
                             android:ellipsize="end"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="@id/vScaryStory"
@@ -784,8 +806,7 @@
                             app:layout_constraintTop_toBottomOf="@id/icScaryStory"
                             android:text="@string/scary_stories"
                             android:fontFamily="@font/svn_gilroy"
-                            android:textSize="16sp"
-                            android:layout_marginBottom="10dp"
+                            android:textSize="14sp"
                             android:textColor="@color/white"
                             android:gravity="center"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -793,6 +814,51 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clLoading"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="match_parent">
+                    <View
+                        android:id="@+id/viewLoading"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/black"
+                        android:alpha="0.4"/>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/amLoading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/anim_loading" />
+                    <TextView
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/amLoading"
+                        android:layout_marginBottom="40dp"
+                        android:lines="2"
+                        android:id="@+id/tv_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bowlby_one_sc"
+                        android:gravity="center"
+                        android:text="@string/capturing_ghost"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

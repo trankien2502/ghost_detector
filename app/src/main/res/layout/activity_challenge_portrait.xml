@@ -46,11 +46,13 @@
             android:src="@drawable/img_challenge_sound_on"/>
 
     </LinearLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:visibility="visible"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivBackChallenge"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -225,80 +227,6 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clTalk"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="42dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <ImageView
-                    android:id="@+id/ivTalk"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/img_challenge_talk"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/bowlby_one_sc"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:text="@string/talk"
-                    android:textColor="@color/white"
-                    android:textSize="28sp"
-                    app:layout_constraintEnd_toEndOf="@id/ivTalk"
-                    app:layout_constraintStart_toStartOf="@id/ivTalk"
-                    app:layout_constraintTop_toTopOf="@id/ivTalk" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clStop"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:visibility="gone"
-                android:layout_marginTop="42dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <ImageView
-                    android:id="@+id/ivStop"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/img_challenge_stop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/bowlby_one_sc"
-                    android:gravity="center"
-                    android:layout_marginHorizontal="10dp"
-                    android:lineSpacingExtra="-15sp"
-                    android:maxLines="3"
-                    android:text="@string/stop_and_ask"
-                    android:textColor="@color/gray"
-                    android:textSize="28sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivStop"
-                    app:layout_constraintEnd_toEndOf="@id/ivStop"
-                    app:layout_constraintStart_toStartOf="@id/ivStop"
-                    app:layout_constraintTop_toTopOf="@id/ivStop" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -326,7 +254,7 @@
                     android:gravity="center"
                     android:lineSpacingExtra="-10sp"
                     android:maxLines="2"
-                    android:text="Reset"
+                    android:text="@string/reset"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@id/ivReset"
@@ -335,8 +263,79 @@
                     app:layout_constraintTop_toTopOf="@id/ivReset" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clStop"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:visibility="gone"
+                android:layout_marginTop="42dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <ImageView
+                    android:id="@+id/ivStop"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/img_challenge_stop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTalk"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="42dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <ImageView
+                    android:id="@+id/ivTalk"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/img_challenge_talk"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/tvClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/clTalk"
+                android:text="@string/click_to_talk"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bowlby_one_sc"
+                android:textSize="20sp"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/amClick"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="40dp"
+                android:rotation="320"
+                app:layout_constraintStart_toStartOf="@+id/clTalk"
+                app:layout_constraintTop_toTopOf="@+id/clTalk"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/hand_tounch" />
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
 
 
 
